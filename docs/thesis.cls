@@ -337,13 +337,13 @@
 
 \renewcommand{\@makechapterhead}[1]{    % Heading for \chapter command
   \vspace*{30\p@}                       % Space at top of text page.
-  \begin{center}\large\bfseries
+  \begin{center}\bfseries
     \ifnum \c@secnumdepth >\m@ne
       \MakeTextUppercase\@chapapp\ \thechapter % 'CHAPTER' and number.
       \par\nobreak
     \fi
   \addvspace{\topskip}
-  \MakeTextUppercase{#1}
+  \large \MakeTextUppercase{#1}
   \end{center}
   \par\nobreak                          % TeX penalty to prevent page break.
   \vskip 24\p@                          % Space between title and text.
