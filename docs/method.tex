@@ -1,5 +1,49 @@
 \chapter{Method}
-\section{Calibration for binary variables}
 
-Consider a binary probabilistic prediction problem, where for each instance $i$ there is a true value $y_i \in {0, 1}$. A machine learning model for this problem assigns a probability $q_i$ for each instance, $q_i \in [0, 1]$. $q_i$ represents the degree of belief that the event $y_i = 1$ will happen. 
+Consider a general probabilistic prediction problem, where for each instance $i$ there is a true value $y_i \in \Omega$, where $\Omega$ is the label space. A stastical machine learning model learns from the training set $D_{train}$ and computes for each instance i of the testing set $D_{test}$ a posterior distribution $q_i(k) \in P$, where $q_i(k)$ represents the degree of belief (or confidence score) on the event ``$y_i=k$'' and $P$ is the probability function space. Alternatively, we can think of the posterior distribution $q_i$ as a probabilistic label that the model assigns to instance i. All instances that are assigned the same posterior distribution belongs to the same class. In this perspective, a probabilistic problem is no difference than a classification problem.  
 
+\section{Calibration-sharpness framework}
+
+%% TODO: this definition is not OK!!
+Let $y$ and $q$ be particular values that $y_i$ and $q(y_i | \alpha)$ can take. The joint distribution $P(y, q)$ offers all the information needed for analysing the quality of the predictions. 
+
+The calibration-sharpness framework for assessing probabilistic model is derived from the following factorization of the joint distributrion $P(y, q)$:
+$$P(y, q) = P(y \mid q)P(q)$$
+
+Given a fixed $q$, the conditional distribution $P(y \mid q)$ indicates how often different values of y have occurred among all instances that the model classifies as having the posterior distribution $q$. In other words, calibration verifies if the belief held by the model matches with the realistic frequency. For example, we expect that among all the days that a weather forecaster predicts a 30\% chance of rain, 30\% will have rain. 
+
+The marginal distribution $P(q)$ indicates how often different values of posterior predictions are used. Going back to the weather forecast example, a forecaster who always predicts the climatological, i.e. the known long-term percentage of rain, will be perfectly calibrated but would be useless in discriminating between days with rain and days without rain. In this case, $P(q)$ is non-zero at only one point and we say that the weather forecasts are not \textit{refined} (or sharp). Ideally, we would want a forecast that implies no uncertainty, either ``100\% chance of rain'' or ``0\% chance of rain''. 
+
+Note that calibration and sharpness are orthogonal and complementary to each other. Perfect prediction implies perfect calibration and perfect sharpness. In the opposite direction, maintaing calibration allows posterior predictions to be more realistic whereas having sharpness in predictions reduces uncertainty in the decision-making process.   
+
+\section{Metrics for calibration and sharpness}
+
+For brevity, denote $p_q(k) = P(y = k \mid q)$, $\forall k \in \Omega$.
+
+Calibration and sharpness can be quantified by two metrics as follows:
+$$CalibrationScore = \frac{1}{|\Omega|}\sum_{k \in \Omega}{E_{q}[p_q(k)(g_1(k) - g_1[p_q(k)]) + (1 - p_q(k))(g_2(k) - g_2[p_q(k)])]}$$
+$$SharpnessScore = \frac{1}{|\Omega|}\sum_{k \in \Omega}{E_{q}[p_q(k)g_1(k) + (1 - p_q(k))g_2(k)]}$$
+
+The functions $g_1$ and $g_2$ are defined as follows:
+$$g_1(x) = \int_{0}^{x}{\alpha(t)dt}$$
+and
+$$g_2(x) = \int_{x}^{1}{\frac{1}{1 - t}\alpha(t)dt}$$
+
+where $\alpha(t)$ is a positive contiuous function on $[0, 1]$.
+
+\section{Calibration for discrete probabilistic task}
+
+In this setting, $\Omega$ is a discrete space. Calibration is defined as follows:
+
+\textbf{Definition 3.1}. A predictive model is said to be \textit{perfectly calibrated} if and only if:
+$$P(y = k \mid q) = q(k) \hspace{1cm} \forall q \in P,\ k \in \Omega.$$  
+
+The left hand side of the equation is the realistic frequency of an event and the right hand side is the posterior predtions for that event. In practice, $P(y = k \mid q)$ is unknown so we have to estimate it using an emperical ratio $\hat{P}(y = k \mid q)$ computed from a sample of data. 
+
+Moreover, if the task is to predict a binary variable then we can visualize the degree of calibration of a model from a $reliability curve$ or $empirical calibration curve$ as shown in Figure BLAH. The procedure of constructing such curve will be discussed in BLAH. 
+
+Unfortunately, for the multilcass case, we would a curve for each type of label. Presenting calibration in such a way is not helpful for drawing conclusions. Alternatively, we can summarize miscalibration in a single scalar, the expected square error between the empirical frequency and the posterior predictions:
+$$TheorCalibMSE = \frac{1}{|\Omega|}\sum_{k \in \Omega}{E_{q}[q(k) - P(y = k \mid q)]^2}$$
+
+
+%For simplicity, instead of working a continuous range of $q_i$, I discretize this interval into a set of n equidistant values $\{x_0, x_1, .., x_n\}$, where $x_0 = 0$, $x_n = 1$ and $x_i = x_{i - 1} + \frac{1}{n}$ for $i = 1.. n - 1$. Each interval $[x_i, x_{i + 1}]$ is called a bucket. Then, each prediction $q_i$ is normalized. 
