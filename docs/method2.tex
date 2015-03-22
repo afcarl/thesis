@@ -1,0 +1,16 @@
+\chapter{Extensions of calibration}
+
+\section{Calibration for structure prediction}
+
+NLP researchers pay tremendous attention to linguistic structure prediction models (POS, NER, parsing). The caliration concept can also be applied to analyse the posterior predictions of these type of models. In this setting, $y$ is not a single label but is a linguistic structure (parse (sub)trees, linear spans). A structure-predictive model assigns a probabilistic prediction $q$ on each structure $y$. 
+
+We define $f(y)$ to be a binary-valued query function of the structure. For example, for a PCFG parsing model, $f(y)$ might denote whether particular span is an NP; for coreference resolution, it might denote whether the first and the sixth mentions belong to the same entity. We can the apply the same calibration framework for binary variables to assess calibration for the model. 
+
+\textbf{Definition 4.1}. Let $p_q = P(f(y) = 1 \mid q)$, the realistic frequency with respect to $q$. A structure-predictive model is said to be \textit{perfectly calibrated} with respect to the query $f(y)$ if and only if:
+$$p_q = q \hspace{1cm} \forall q \in [0, 1].$$  
+
+Verification of calibration and measurement of miscalibration are conducted using the same methods described for binary varibables by regarding $f(y)$ as the binary variable. 
+
+\section{Calibration for continuous variable}
+
+%%TODO:
