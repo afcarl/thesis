@@ -74,6 +74,11 @@ $$MSE_{calib} = E_{q}[p_q - q]^2$$
 
 %For simplicity, instead of working a continuous range of $q_i$, I discretize this interval into a set of n equidistant values $\{x_0, x_1, .., x_n\}$, where $x_0 = 0$, $x_n = 1$ and $x_i = x_{i - 1} + \frac{1}{n}$ for $i = 1.. n - 1$. Each interval $[x_i, x_{i + 1}]$ is called a bucket. Then, each prediction $q_i$ is normalized. 
 
+\subsection{Calculate calibration score}
+\subsubsection{Local averaging}
+
+\subsubsection{Kernal regression}
+
 \section{Applications of calibration}
 
 \subsection{Calibration for structure prediction}

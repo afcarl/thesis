@@ -1,6 +1,6 @@
 \chapter{Report and discussion of research results}
 
-\section{Comparison between miscalibrations of Hidden Markov Models and Condition Random Fields}
+\section{Comparison of miscalibration between Hidden Markov Models and Condition Random Fields}
 
 We suspect that the characteristic of a probabilistic model is a factor that affects miscalibration in structure predictions. Therefore, we choose to compare between the two most widely used classes of models in structure predictions, Hidden Markov Models (HMMs) and Conditional Random Fields (CRFs). They are fundamentally different in their objective functions: HMMs are generative models which learn the joint distribution of the observations and the labels whereas CRFs are discriminative and model directly the conditional distribution of the observations given the labels. We perform our experiements on two common structure prediction tasks: part-of-speech tagging (POS) and named-entity recognition. 
 
@@ -14,17 +14,17 @@ We extract articles from the Wall Street Journal (WSJ) from the CoNLL-2011 datas
 
 \begin{figure}[t]
 \minipage{0.32\textwidth}
-  \includegraphics[width=\linewidth]{pos_hmm_pred.jpg}
+  \includegraphics[width=\linewidth, valign=t]{pos_hmm_pred.jpg}
   \caption{Calibration curve for HMM (POS), Acc = ??, CalibScore = ??}
   \label{fig:pos_hmm_pred}
 \endminipage\hfill
 \minipage{0.32\textwidth}
-  \includegraphics[width=\linewidth]{pos_crf_pred.jpg}
+  \includegraphics[width=\linewidth, valign=t]{pos_crf_pred.jpg}
   \caption{Calibration curve for CRF-Basic (POS), Acc = ??, CalibScore = ??}
   \label{fig:pos_crf_pred}
 \endminipage\hfill
 \minipage{0.32\textwidth}
-  \includegraphics[width=\linewidth]{pos_crf_advanced_pred.jpg}
+  \includegraphics[width=\linewidth, valign=t]{pos_crf_advanced_pred.jpg}
   \caption{Calibration curve for CRF-Advanced (POS), Acc = ??, CalibScore = ??}
   \label{fig:pos_crf_advanced_pred}  
 \endminipage
@@ -39,11 +39,9 @@ To measure fully the power of the CRF model, we add more features to it, includi
 
 We repeat our comparision between HMMs and CRFs on a harder task, predicting POS tags for tweets. We use the ARK's Twitter POS data set (CITE NOAH), which consists of 1000 sentences for training, 327 sentences for development, 500 sentences for testing. The predictions we test is to predict whether a word has the ``V'' tag. 
 
-\subsubsection{Data}
-
 We conduct the same experiments as in Section BLAH BLAH and obtain similar patterns. CRF-Basic's miscalibration is about half HMM's (Figure \ref{fig:pos_tweet_hmm_pred}). On the other hand, equipped with better features, CRF-Advanced demonstrates a significant improvement from CRF-Basic, reducing further the miscalibration level by one half. It should also be noticed that CRF-Advanced does not give perfectly accurate predictions (87\% accuracy) but those are reliable predictions.   
 
-\begin{figure}
+\begin{figure}[t]
 \minipage{0.32\textwidth}
   \includegraphics[width=\linewidth]{pos_tweet_hmm_pred.jpg}
   \caption{Calibration curve for HMM (POS Tweet), Acc = ??, CalibScore = ??}
