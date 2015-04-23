@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/Debian) (preloaded format=pdflatex 2015.3.15)  17 APR 2015 12:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/Debian) (preloaded format=pdflatex 2015.3.15)  23 APR 2015 17:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -327,18 +327,18 @@ Chapter 3.
 
 
 
-] [8] [9] [10]) [11]
+] [8] [9] [10] [11] [12]) [13]
 \openout2 = `results.aux'.
 
  (./results.tex
 Chapter 4.
-<pos_hmm_pred.jpg, id=44, 1003.75pt x 1003.75pt>
+<pos_hmm_pred.jpg, id=55, 1003.75pt x 1003.75pt>
 File: pos_hmm_pred.jpg Graphic file (type jpg)
  <use pos_hmm_pred.jpg>
 Package pdftex.def Info: pos_hmm_pred.jpg used on input line 17.
 (pdftex.def)             Requested size: 138.76157pt x 138.7627pt.
 
-<pos_crf_pred.jpg, id=45, 1003.75pt x 1003.75pt>
+<pos_crf_pred.jpg, id=56, 1003.75pt x 1003.75pt>
 File: pos_crf_pred.jpg Graphic file (type jpg)
  <use pos_crf_pred.jpg>
 Package pdftex.def Info: pos_crf_pred.jpg used on input line 22.
@@ -348,7 +348,7 @@ Underfull \hbox (badness 4132) in paragraph at lines 23--23
 []\OT1/cmr/bx/n/12 Figure 4.2. \OT1/cmr/m/n/12 Cal-i-bra-
  []
 
-<pos_crf_advanced_pred.jpg, id=46, 1003.75pt x 1003.75pt>
+<pos_crf_advanced_pred.jpg, id=57, 1003.75pt x 1003.75pt>
 File: pos_crf_advanced_pred.jpg Graphic file (type jpg)
 
 <use pos_crf_advanced_pred.jpg>
@@ -359,12 +359,12 @@ Underfull \hbox (badness 1924) in paragraph at lines 28--28
 \OT1/cmr/m/n/12 curve for CRF-Advanced
  []
 
-[12
+[14
 
 
 
-] [13 <./pos_hmm_pred.jpg> <./pos_crf_pred.jpg> <./pos_crf_advanced_pred.jpg>] 
-<pos_tweet_hmm_pred.jpg, id=54, 1003.75pt x 1003.75pt>
+] [15 <./pos_hmm_pred.jpg> <./pos_crf_pred.jpg> <./pos_crf_advanced_pred.jpg>] 
+<pos_tweet_hmm_pred.jpg, id=64, 1003.75pt x 1003.75pt>
 File: pos_tweet_hmm_pred.jpg Graphic file (type jpg)
 
 <use pos_tweet_hmm_pred.jpg>
@@ -375,14 +375,14 @@ Underfull \hbox (badness 4132) in paragraph at lines 47--47
 []\OT1/cmr/bx/n/12 Figure 4.4. \OT1/cmr/m/n/12 Cal-i-bra-
  []
 
-<pos_tweet_crf_pred.jpg, id=55, 1003.75pt x 1003.75pt>
+<pos_tweet_crf_pred.jpg, id=65, 1003.75pt x 1003.75pt>
 File: pos_tweet_crf_pred.jpg Graphic file (type jpg)
 
 <use pos_tweet_crf_pred.jpg>
 Package pdftex.def Info: pos_tweet_crf_pred.jpg used on input line 51.
 (pdftex.def)             Requested size: 138.76157pt x 138.7627pt.
 
-<pos_tweet_crf_advanced_pred.jpg, id=56, 1003.75pt x 1003.75pt>
+<pos_tweet_crf_advanced_pred.jpg, id=66, 1003.75pt x 1003.75pt>
 File: pos_tweet_crf_advanced_pred.jpg Graphic file (type jpg)
 
 <use pos_tweet_crf_advanced_pred.jpg>
@@ -394,12 +394,12 @@ Underfull \hbox (badness 1924) in paragraph at lines 57--57
 \OT1/cmr/m/n/12 curve for CRF-Advanced
  []
 
-) [14 <./pos_tweet_hmm_pred.jpg> <./pos_tweet_crf_pred.jpg> <./pos_tweet_crf_ad
+) [16 <./pos_tweet_hmm_pred.jpg> <./pos_tweet_crf_pred.jpg> <./pos_tweet_crf_ad
 vanced_pred.jpg>]
 \openout2 = `results2.aux'.
 
  (./results2.tex
-<calibrated_binsize_score_log_scale.png, id=60, 586.8324pt x 442.2924pt>
+<calibrated_binsize_score_log_scale.png, id=70, 586.8324pt x 442.2924pt>
 File: calibrated_binsize_score_log_scale.png Graphic file (type png)
 
 <use calibrated_binsize_score_log_scale.png>
@@ -407,21 +407,21 @@ Package pdftex.def Info: calibrated_binsize_score_log_scale.png used on input l
 ine 20.
 (pdftex.def)             Requested size: 216.81pt x 163.40266pt.
 
-<calibrated_binsize_score.png, id=62, 586.8324pt x 442.2924pt>
+<calibrated_binsize_score.png, id=72, 586.8324pt x 442.2924pt>
 File: calibrated_binsize_score.png Graphic file (type png)
 
 <use calibrated_binsize_score.png>
 Package pdftex.def Info: calibrated_binsize_score.png used on input line 25.
 (pdftex.def)             Requested size: 216.81pt x 163.40266pt.
 
-<uncalibrated_binsize_score.png, id=63, 586.8324pt x 442.2924pt>
+<uncalibrated_binsize_score.png, id=73, 586.8324pt x 442.2924pt>
 File: uncalibrated_binsize_score.png Graphic file (type png)
 
 <use uncalibrated_binsize_score.png>
 Package pdftex.def Info: uncalibrated_binsize_score.png used on input line 30.
 (pdftex.def)             Requested size: 216.81pt x 163.40266pt.
 
-<calibrated_sampleSize_score.png, id=64, 586.8324pt x 442.2924pt>
+<calibrated_sampleSize_score.png, id=74, 586.8324pt x 442.2924pt>
 File: calibrated_sampleSize_score.png Graphic file (type png)
 
 <use calibrated_sampleSize_score.png>
@@ -429,18 +429,18 @@ Package pdftex.def Info: calibrated_sampleSize_score.png used on input line 41.
 
 (pdftex.def)             Requested size: 216.81pt x 163.40266pt.
 
-<uncalibrated_sampleSize_score.png, id=65, 586.8324pt x 442.2924pt>
+<uncalibrated_sampleSize_score.png, id=75, 586.8324pt x 442.2924pt>
 File: uncalibrated_sampleSize_score.png Graphic file (type png)
 
 <use uncalibrated_sampleSize_score.png>
 Package pdftex.def Info: uncalibrated_sampleSize_score.png used on input line 4
 6.
 (pdftex.def)             Requested size: 216.81pt x 163.40266pt.
- [15
+ [17
 
 
-] [16 <./calibrated_binsize_score_log_scale.png> <./calibrated_binsize_score.pn
-g> <./uncalibrated_binsize_score.png>]) [17 <./calibrated_sampleSize_score.png>
+] [18 <./calibrated_binsize_score_log_scale.png> <./calibrated_binsize_score.pn
+g> <./uncalibrated_binsize_score.png>]) [19 <./calibrated_sampleSize_score.png>
  <./uncalibrated_sampleSize_score.png>]
 Chapter 5.
 
@@ -476,28 +476,31 @@ Appendix B.
 Here is how much of TeX's memory you used:
  3537 strings out of 493104
  49832 string characters out of 6136932
- 122867 words of memory out of 5000000
+ 122866 words of memory out of 5000000
  6881 multiletter control sequences out of 15000+600000
  9400 words of font info for 35 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 39i,9n,35p,1182b,343s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 39i,9n,35p,1487b,343s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/t
 exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf
 -dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10
-.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><
-/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/s
-hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/t
-exlive/texmf-dist/fonts/type1/public/amsfonts/latxfont/lcircle1.pfb>
-Output written on thesis.pdf (28 pages, 561588 bytes).
+fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.
+pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></
+usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/sha
+re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/public/amsfonts/latxfont/lcircle1.pfb>
+Output written on thesis.pdf (30 pages, 592070 bytes).
 PDF statistics:
- 164 PDF objects out of 1000 (max. 8388607)
- 103 compressed objects within 2 object streams
+ 182 PDF objects out of 1000 (max. 8388607)
+ 116 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  56 words of extra memory for PDF output out of 10000 (max. 10000000)
 

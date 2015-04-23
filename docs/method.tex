@@ -1,40 +1,83 @@
 \chapter{Explanation of current methodology and goals}
+\section{Background}
 
-\section{Calibration for binary probabilistic prediction tasks}
+\subsection{Calibration-refinement framework}
 
-Consider a binary probabilistic prediction problem, where each to-be-predicted instance $i$ has a true label $y_i \in \{0, 1\}$. A stastical predictive model produces probabilistic predictions $q_i \in [0, 1]$ for each instance i, which represents a degree of belief that $y_i=1$. For brevity, I will drop the subscripts and denote by $y$ and $q$ a generic true label and a generic probabilistic predition, respectively. 
-
-\subsection{Calibration-refined framework}
+Consider a binary probabilistic prediction problem, where each to-be-predicted instance $i$ has a true label $y_i \in \{0, 1\}$. A statistical predictive model for this problem produces probabilistic predictions $q_i \in [0, 1]$ for each instance $i$, which represents a degree of belief that the event ``$y_i=1$'' will occur. For brevity, we drop the subscripts and denote by $y$ and $q$ a generic true label and a generic probabilistic prediction, respectively.  
 
 %% TODO: this definition is not OK!!
-Given the joint probability $P(y, q)$, which contains all the information needed for analysing the quality of a set of probilistic preditions, Murphy and Winkler (1984) derived the calibration-refined framework from the following Bayesian factorization of $P(y, q)$:
+The joint probability $P(y, q)$ contains all the information needed for analyzing the quality of a set of probabilistic predictions (Murphy and Winkler (1984)). The calibration-refinement framework is derived by applying Bayes' rule to $P(y, q)$:
 \begin{equation}
   P(y, q) = P(y \mid q)P(q)
   \label{eqn:calib-ref-factor}
 \end{equation}
 
-Given a fixed value of $q$, the conditional probability $P(y = 1 \mid q^k)$ is called the \textit{realistic frequency} with respect to the prediction $q$. It indicates how often the event $y=1$ happens in reality among all instances whose predictions for that event are $q$. A model is said to be \textit{perfectly calibrated} (or perfectly reliable) if its predictions match with their realistic frequencies. A formal definition for perfect calibration will be given in section BLAH BLAH. On the other hand, the marginal distribution $P(q)$ is an indicator for sharpness of the model. It specifies how often different values of predictions are assigned by the model. A model is said to be \textit{refined} (or sharp) if $P(q)$ concentrates about 0 and 1. This charateristic of the model tells us that it is capable of discriminating between different types of data instances.   
+The conditional probability $P(y = 1 \mid q^k)$ is called the \textit{realistic frequency} with respect to the prediction value $q$. It indicates how often the event $y=1$ happens in reality among all instances whose predictions for that event are $q$. A model is said to be \textit{perfectly calibrated} (or perfectly reliable) if its predictions match with their realistic frequencies. A more formal definition of perfect calibration is presented in section 3.1.2. On the other hand, the marginal distribution $P(q)$ reflects a model's refinement. A model is said to be \textit{refined} (or sharp) if $P(q)$ concentrates about 0 and 1. This characteristic tells us that the model is capable of discriminating between different types of data instances.   
 
-For a more concrete view of the calibration-sharpness framework, consider a standard probabilistic prediction problem: \textit{weather forecasting}. When the forecaster give a prediction such as ``There is 30\% chance that it will rain tomorrow'', we should expect that among all the days that a weather forecaster predicts a 30\% chance of rain, 30\% will have rain. If the same expectation are met for all other predictions, we say that the forecaster is perfectly calibrated (or reliable). However, a forecaster who always predicts the climatological, i.e. the known long-term frequency of rain, will be perfectly calibrated although those predictions would be useless in discriminating between days with rain and days without rain. In this case, the weather forecasts are not \textit{sharp} (or refined). Ideally, we would want forecasts that imply no uncertainty, either saying ``100\% chance of rain'' or ``0\% chance of rain''. 
+For a more concrete view of the calibration-sharpness framework, consider a classic example: \textit{precipitation forecast}. In this task, the forecaster is required to given an assessment for each day on the likelihood of precipitation of that day. If the forecaster give a prediction such as ``There is 30\% chance that it will rain tomorrow'', from a frequentist perspective, we should expect that among all the days that a weather forecaster predicts a 30\% chance of rain, indeed 30\% will rain. If that condition is met for the 30-percent predictions, then all of the them are reliable since reality has verified them. Moreover, if the same condition are met for all types of predictions (between 0 and 1), we say that the forecaster is perfectly calibrated (or reliable). However, a reliable forecaster is not always a ``good'' predictor. Consider the scenario when a forecaster always predicts the climatological probability (TODO: fix this word), i.e. the long-term frequency of rain, in any day. The forecaster will be perfectly calibrated but his or her predictions would be useless for the regions where the climatological likelihood of raining and not raining are equally likely. Those unrefined predictions do not help in making the final decisions for binary choice. Ideally, the sharpest forecasts are the ones that imply no uncertainty, either saying ``100\% chance of rain'' or ``0\% chance of rain''. 
 
-As implied by equation (3.1), calibration and sharpness are orthogonal and complementary concepts. Perfect prediction implies perfect calibration and perfect sharpness. In the opposite direction, maintaining calibration allows posterior predictions to be more realistic whereas having sharpness in predictions reduces uncertainty in the decision-making process.   
+As we can see, maintaining calibration allows posterior predictions to be more realistic whereas having sharpness in predictions reduces uncertainty in the decision-making process. Hence, calibration and sharpness are orthogonal and complementary concepts.    
 
-\subsection{Perfect calibration}
+\subsection{Definition of perfect calibration}
 
-\subsubsection{Definition}
+\textbf{Definition 3.1.} Let $S = \{q_1, q_2, \cdots\}$ be the set of predictions produced by a probabilistic model over a randomly drawn set of intances. Given a value $q$ between 0 and 1, inclusively, the \textit{realistic frequency} with respect to $q$, denoted by $p_q$, is defined as:
+$$p_q = P(y = 1 \mid q) = \lim_{|S|\to\infty} \frac{\sum_{q_i\in S}I\{q_i = q\}I\{y_i = 1\}}{\sum_{q_i\in S}I\{q_i = q\}}$$ where $I\{.\}$ is the indicator function.
 
-erfect calibration is defined as follows:
-
-\textbf{Definition 3.1.} Let $p_q = P(y = 1 \mid q)$, the realistic frequency with respect to $q$. P binary predictive model is said to be \textit{perfectly calibrated} if and only if:
+\textbf{Definition 3.2.} A binary probabilistic model is said to be \textit{perfectly calibrated} if and only if:
 $$p_q = q \hspace{1cm} \forall q \in [0, 1].$$  
 
-As we can see, the left hand side of the equation represents a realistic frequency, which has to be equal to the corresponding probabilistic prediction on the right side for all possible values of $q$. 
+\subsection{Measuring miscalibration}
 
-\subsubsection{Adaptive bucketization}
+When a model does fulfill definition 3.2, we say that it is \textit{miscalibrated}. The notion of miscalibration is more interesting to study than perfect calibration since most NLP models fall into this category. It is a natural tempting to devise a metric that quantifies miscalibration. Following DeGroot and Fienberg (1982), we introduce concepts that are necessary for constructing such a metric.
 
-In practice, $p_q$ is unknown so we have to estimate it using an \textit{empirical frequency} $\hat{p}_q$ computed from a sample of data. However, there are usually not enough instances whose predictions is $q$ to be used for computing $\hat{p}_q$ adequately. A solution for this problem is sort the predictions according to their values and partition them into groups of equal cardinalities. This technique is called ``bucketization''. 
+\textbf{Definition 3.3.} Let $p$ be real number in $[0, 1]$. A \textit{strictly proper scoring rule} specified by an increasing function $g_1(x)$ and a decreasing function $g_2(x)$ is a function of $x$ that has the following form:
+\begin{equation}
+    \displaystyle f(x) = pg_1(x) + (1 - p)g_2(x)
+    \label{eqn:proper_rule}
+\end{equation}
+and satisfies that $f(x)$ is maximized only at $x = p$.
 
-Choosing an appropriate bucket size is a non-trivial problem. As mentioned, if the size is to small the estimation for realistic frequencies will be too inaccurate to be useful. Conversely, as the bucket size grows larger, we are drifting away from verifying the true form of the condition in definition 3.1. An alternative approach for bucketization is to divide the interval $[0, 1]$ into equal-size sub-intervals. However, this approach does not guarantee the same degree of accuracy for all frequency estimates.    
+\textbf{Theorem 3.4.} If $g_1(x)$ and $g_2(x)$ specify a strictly proper function rule, the overall score $S$ for predictions for a probabilistic predictive model can be expressed in the form $S = S_1 + S_2$, where
+\begin{equation}    
+  \begin{array}{l}
+    S_1 = E_{q}\left[p_q\left(g_1(q) - g_1(p_q)\right) + \left(1 - p_q\right)\left(g_2(q) - g_2(p_q)\right)\right] \\ 
+    S_2 = E_{q}\left[p_qg_1(p_q) + \left(1 - p_q\right)g_2(p_q)\right]
+  \end{array}
+  \label{eqn:general_metric}
+\end{equation}
+
+It can be proved that $S_1$ and $S_2$ have the following properties: 
+\begin{enumerate}
+  \item $S_1$ is zero only for perfectly calibrated model and negative otherwise.
+  \item If two model A and B are both perfectly calibrated and A is at least as sharp as B, the value of $S_2$ will be at least as large for A as it is for B.
+\end{enumerate}
+
+Choosing $g_1(x) = (x - 1)^2$ and $g_2(x) = x^2$, $S_1$ becomes the expected mean squared error between probabilistic predictions and the corresponding realistic frequencies:
+$$E_{q}[p_q - q]^2$$
+
+We will refer to this quantity by the \textit{MSE calibration score} or simply calibration score, interchangeably. This is the metric for calibration that we used throughout our experiments.
+
+\section{Calculating calibration score}
+
+The realistic frequency $p_q$ defined in section 3.1.2 is an unknown quantity. Therefore, the true value of the MSE calibration score cannot be calculated exactly. The general approach for this problem is to approximate the score using an estimate of $p_q$. Estimating $p_q$ can be considered as a regression problem where data set is pairs of prediction-observation $(q, y)$. Parametric regression is not flexible enough for exploring different types of models. On the other hand, the non-parametric methods only impose weak assumptions on the model choice but gives close approximations.
+
+\section{Nonparametric regression}
+
+Given a set of data pairs $\{(x_i, y_i), \cdots, (x_n, y_n)\}$, a general non-parametric estimator $\hat{f}(x)$ for a latent function $f(x)$ has the following form:
+
+$$\hat{f}_n(x) = \sum_{i = 1}^{n}l_i(x)y_i$$ where
+$$l_i(x) = \frac{K\left(\frac{x - x_i}{h}\right)}{\sum_{j = 1}^{n}K\left(\frac{x - x_i}{h}\right)}$$
+
+$K$ is a function that measures the ``distance'' between two x values. In regressogram (or binning), $K$ is a non-smooth function that is zero everywhere except those point whose absolute values are less than or equal to a predefined constant. In kernel regression, $K$ is a kernel such as the Gaussian kernel. The hyper-parameter $h$, which control the variance-bias tradeoff of the estimate, is chosen via cross-validation.    
+
+\section{Local likelihood for calculating calibration score}
+
+When y is a binary variable, local likelihood (LL) is shown to be more effective that other methods that do not restrict the estimated values to be between 0 and 1 (CITE Frolich). LL is the local variant of logistic regression where the value at each point is modeled by logistic function parametrized by a parameter vector $\theta_x$:
+
+$$\hat{f}(x) = \frac{e^{\theta^*_x}}{1 + e^{\theta^*_x}}$$ where 
+$$\theta^*_x = arg\max_{\theta_x}\sum_{i=1}^n K\left(\frac{x_i - x}{h}\right)\left(y_i\theta_x^{\top}(x_i - x) - \log(1 + e^{\theta_x^{\top}(x_i - x)})\right)$$
+
+
 
 \subsection{Miscalibration}
 
@@ -42,42 +85,10 @@ Choosing an appropriate bucket size is a non-trivial problem. As mentioned, if t
 
 Definition 3.1 helps us identify perfectly calibrated models. But what about models that do not fall into that category? A quick way to imagine about miscalibration is to visualize it by a \textit{reliability curve} or \textit{empirical calibration curve}. After bucketizing the model predictions, we obtain a set of frequency-predition pairs $(p_k, q_k)$. A calibration curve is a curve that smoothly connects the points $(p_k, q_k)$ in a 2D-plot (Figure BLAH BLAH). We also want to show the perfect calibration curve, which coincides to the diagional line $x=y$, for comparison. 
 
-\subsubsection{Measuring miscalibration}
-
-Having a metric to capture the miscalibration of a model is handy for model selection or tracking learning progress. Following DeGroot and Fienberg (1982), I will introduce concepts that are necessary for constructing such a metric.
-
-\textbf{Definition 3.2.} Let $p$ be real number in $[0, 1]$. A \textit{strictly proper scoring rule} specified by an increasing function $g_1(x)$ and a descreasing function $g_2(x)$ is a function of $x$ that has the following form:
-\begin{equation}
-    \displaystyle f(x) = pg_1(x) + (1 - p)g_2(x)
-    \label{eqn:proper_rule}
-\end{equation}
-and satisfies that $f(x)$ is maximized only at $x = p$.
-
-\textbf{Theorem 3.3.} If $g_1(x)$ and $g_2(x)$ specify a strictly proper function rule, the overall score $S$ for predictions for a probabilistic preditive model can be expressed in the form $S = S_1 + S_2$, where
-\begin{equation}    
-  \begin{array}{l}
-    S_1 = E_{q}[p_q(g_1(q) - g_1(p_q)) + (1 - p_q)(g_2(q) - g_2(p_q))] \\ 
-    S_2 = E_{q}[p_qg_1(p_q) + (1 - p_q)g_2(p_q)]
-  \end{array}
-  \label{eqn:general_metric}
-\end{equation}
-
-It is not difficult to see that if the scoring rule is strictly proper then $S_1$ is maximized only when $p_q = q$ and $S_2$ is maximized when the values of $p_q$ concentrate near 0 and 1. In fact, it can be proven that $S_1$ and $S_2$ have the following properties: 
-\begin{enumerate}
-  \item $S_1$ is zero only for perfectly calibrated model and negative otherwise.
-  \item If two model A and B are both perfectly calibrated and A is at least as sharp as B, the value of $S_2$ will be at least as large for A as it is for B.
-\end{enumerate}
-
-Choosing $g_1(x) = (x - 1)^2$ and $g_2(x) = x^2$, then $S_1$ becomes the expected mean squared error between probabilistic predictions and the corresponding realistic frequencies:
-
-$$MSE_{calib} = E_{q}[p_q - q]^2$$
-
-%For simplicity, instead of working a continuous range of $q_i$, I discretize this interval into a set of n equidistant values $\{x_0, x_1, .., x_n\}$, where $x_0 = 0$, $x_n = 1$ and $x_i = x_{i - 1} + \frac{1}{n}$ for $i = 1.. n - 1$. Each interval $[x_i, x_{i + 1}]$ is called a bucket. Then, each prediction $q_i$ is normalized. 
-
 \subsection{Calculate calibration score}
 \subsubsection{Local averaging}
 
-\subsubsection{Kernal regression}
+\subsubsection{Kernel regression}
 
 \section{Applications of calibration}
 
