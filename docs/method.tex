@@ -3,27 +3,29 @@
 
 \subsection{Calibration-refinement framework}
 
-Consider a binary probabilistic prediction problem, where each to-be-predicted instance $i$ has a true label $y_i \in \{0, 1\}$. A statistical predictive model for this problem produces probabilistic predictions $q_i \in [0, 1]$ for each instance $i$, which represents a degree of belief that the event ``$y_i=1$'' will occur. For brevity, we drop the subscripts and denote by $y$ and $q$ a generic true label and a generic probabilistic prediction, respectively.  
+Throughout this paper, we will consider a binary prediction problem, where each to-be-predicted instance can either be labeled positive (denoted by 1), or negative (denoted by 0). A probabilistic model for this problem assigns each instance $i$ a \textit{prediction} $q_i \in [0, 1]$, which represents the confidence level that the instance is in the positive class. After the model makes their predictions, the set of true observations will be given for model assessment. The true observation for instance $i$ is denoted by $y_i \in \{0, 1\}$.  
 
 %% TODO: this definition is not OK!!
-The joint probability $P(y, q)$ contains all the information needed for analyzing the quality of a set of probabilistic predictions (Murphy and Winkler (1984)). The calibration-refinement framework is derived by applying Bayes' rule to $P(y, q)$:
+Let $S = \{(q_1, y_1), (q_2, y_2), \cdots, (q_n y_n)\}$ be a set of prediction-observation pairs produced by a probabilistic model. Follow Murphy and Winkler (1984), we assume that the elements of S are drawn from a hypothetical joint distribuion $P(y, q)$, where $y$ and $q$ are the random variables for the prediction and the true label, respectively. $P(y, q)$ contains all the information needed for analyzing the quality of the predictions. The \textit{calibration-refinement framework} is based on the Bayesian factorization of $P(y, q)$:
 \begin{equation}
   P(y, q) = P(y \mid q)P(q)
   \label{eqn:calib-ref-factor}
 \end{equation}
 
-The conditional probability $P(y = 1 \mid q^k)$ is called the \textit{realistic frequency} with respect to the prediction value $q$. It indicates how often the event $y=1$ happens in reality among all instances whose predictions for that event are $q$. A model is said to be \textit{perfectly calibrated} (or perfectly reliable) if its predictions match with their realistic frequencies. A more formal definition of perfect calibration is presented in section 3.1.2. On the other hand, the marginal distribution $P(q)$ reflects a model's refinement. A model is said to be \textit{refined} (or sharp) if $P(q)$ concentrates about 0 and 1. This characteristic tells us that the model is capable of discriminating between different types of data instances.   
+The conditional probability $P(y = 1 \mid q)$ is called the \textit{realistic frequency} with respect to the prediction value $q$. It indicates how often the true label turns out to be positive among all instances that are predicted to be positive with a confidence level of $q$. A model is said to be \textit{perfectly calibrated} (or perfectly reliable) if its predictions match with their realistic frequencies for all confidence levels. A more formal definition of perfect calibration is presented in section 3.1.2. On the other hand, the marginal distribution $P(q)$ reflects a model's refinement. A model is said to be \textit{refined} (or sharp) if $P(q)$ concentrates about 0 and 1. This characteristic indicates that the model is capable of discriminating instances from the positive class from instances from the negative class.   
 
-For a more concrete view of the calibration-sharpness framework, consider a classic example: \textit{precipitation forecast}. In this task, the forecaster is required to given an assessment for each day on the likelihood of precipitation of that day. If the forecaster give a prediction such as ``There is 30\% chance that it will rain tomorrow'', from a frequentist perspective, we should expect that among all the days that a weather forecaster predicts a 30\% chance of rain, indeed 30\% will rain. If that condition is met for the 30-percent predictions, then all of the them are reliable since reality has verified them. Moreover, if the same condition are met for all types of predictions (between 0 and 1), we say that the forecaster is perfectly calibrated (or reliable). However, a reliable forecaster is not always a ``good'' predictor. Consider the scenario when a forecaster always predicts the climatological probability (TODO: fix this word), i.e. the long-term frequency of rain, in any day. The forecaster will be perfectly calibrated but his or her predictions would be useless for the regions where the climatological likelihood of raining and not raining are equally likely. Those unrefined predictions do not help in making the final decisions for binary choice. Ideally, the sharpest forecasts are the ones that imply no uncertainty, either saying ``100\% chance of rain'' or ``0\% chance of rain''. 
+For a more concrete view of the calibration-sharpness framework, consider a classic example: \textit{precipitation forecast}. In this task, the forecaster is required to give an assessment on the likelihood of precipitation of each single day in a period of time. If a reliable forecaster give a prediction such as ``There is 30\% chance that it will rain tomorrow'', we should expect that among all the days on which that type of prediction is announced, exactly 30\% of them will be rainy. Moreover, we should also expect the same condition to hold for all types of predictions (between 0 and 1). However, a reliable forecaster is not always a ``good'' predictor. Consider the scenario when a forecaster always predicts the climatological probability, i.e. the long-term frequency of precipitation, for any day. The forecaster will be perfectly calibrated but his or her predictions would be useless for regions where the climatological likelihood of raining and not raining are equally likely. In those cases, such unrefined predictions imply a lot of uncertainty and do not help with finalizing binary decisions.  
 
-As we can see, maintaining calibration allows posterior predictions to be more realistic whereas having sharpness in predictions reduces uncertainty in the decision-making process. Hence, calibration and sharpness are orthogonal and complementary concepts.    
+As we can see, maintaining calibration allows posterior predictions to be more realistic whereas having refinement in predictions reduces uncertainty in the decision-making process. Hence, calibration and refinement are orthogonal and complementary concepts.    
 
 \subsection{Definition of perfect calibration}
 
-\textbf{Definition 3.1.} Let $S = \{q_1, q_2, \cdots\}$ be the set of predictions produced by a probabilistic model over a randomly drawn set of intances. Given a value $q$ between 0 and 1, inclusively, the \textit{realistic frequency} with respect to $q$, denoted by $p_q$, is defined as:
-$$p_q = P(y = 1 \mid q) = \lim_{|S|\to\infty} \frac{\sum_{q_i\in S}I\{q_i = q\}I\{y_i = 1\}}{\sum_{q_i\in S}I\{q_i = q\}}$$ where $I\{.\}$ is the indicator function.
+Consider the set of prediction-observation pairs $S$ defined in the previous section.
 
-\textbf{Definition 3.2.} A binary probabilistic model is said to be \textit{perfectly calibrated} if and only if:
+\textbf{Definition 3.1.} Given a value $q$ between 0 and 1, inclusively, the \textit{realistic frequency} with respect to $q$, denoted by $p_q$, is defined as:
+$$p_q = P(y = 1 \mid q) = \lim_{n\to\infty} \frac{\sum_{i=1}^nI\{q_i = q\}I\{y_i = 1\}}{\sum_{i=1}^nI\{q_i = q\}}$$ where $I\{.\}$ is the indicator function and $(q_i, y_i) \in S$.
+
+\textbf{Definition 3.2.} A set of prediction-observation pairs $S$ is said to be \textit{perfectly calibrated} if and only if:
 $$p_q = q \hspace{1cm} \forall q \in [0, 1].$$  
 
 \subsection{Measuring miscalibration}
@@ -53,57 +55,76 @@ It can be proved that $S_1$ and $S_2$ have the following properties:
 \end{enumerate}
 
 Choosing $g_1(x) = (x - 1)^2$ and $g_2(x) = x^2$, $S_1$ becomes the expected mean squared error between probabilistic predictions and the corresponding realistic frequencies:
-$$E_{q}[p_q - q]^2$$
+$$CalibMSE = E_{q}[p_q - q]^2$$
 
-We will refer to this quantity by the \textit{MSE calibration score} or simply calibration score, interchangeably. This is the metric for calibration that we used throughout our experiments.
+We will refer to this quantity by the \textit{MSE calibration score} or simply calibration score, interchangeably. 
 
-\section{Calculating calibration score}
+\section{Calculate calibration score}
 
-The realistic frequency $p_q$ defined in section 3.1.2 is an unknown quantity. Therefore, the true value of the MSE calibration score cannot be calculated exactly. The general approach for this problem is to approximate the score using an estimate of $p_q$. Estimating $p_q$ can be considered as a regression problem where data set is pairs of prediction-observation $(q, y)$. Parametric regression is not flexible enough for exploring different types of models. On the other hand, the non-parametric methods only impose weak assumptions on the model choice but gives close approximations.
+The realistic frequency $p_q$ defined in section 3.1.2 is an unknown quantity. Therefore, the true value of the MSE calibration score cannot be calculated exactly. A general approach for this problem is to replace $p_q$ in the score's formula by an approximation computed from data. We will describe adaptive binning as a simple method for doing it.
 
-\section{Nonparametric regression}
+Parametric regression is not an appropriate choice since it would not be flexible enough for exloring different models' calibration patterns. Conversely, non-parametric methods only impose weak assumptions on the model choice but still gives close approximation.
 
-Given a set of data pairs $\{(x_i, y_i), \cdots, (x_n, y_n)\}$, a general non-parametric estimator $\hat{f}(x)$ for a latent function $f(x)$ has the following form:
+\subsection{Adaptive binning procedure}
 
-$$\hat{f}_n(x) = \sum_{i = 1}^{n}l_i(x)y_i$$ where
-$$l_i(x) = \frac{K\left(\frac{x - x_i}{h}\right)}{\sum_{j = 1}^{n}K\left(\frac{x - x_i}{h}\right)}$$
+Adaptive binning is a modified version of \textit{regressogram} (CITE Wasserman 2006). Instead of dividing the interval $[0, 1]$ into equally spaced like regressogram does, adaptive binning assigns an equal number of data points to each bin. This is advantangeous in the context of assessing NLP models, where the distribution of predictions is often skewed toward 0 and 1. Adaptive binning ensures that the mid-range approximations have roughly the same standard errors as those near the boundaries.
 
-$K$ is a function that measures the ``distance'' between two x values. In regressogram (or binning), $K$ is a non-smooth function that is zero everywhere except those point whose absolute values are less than or equal to a predefined constant. In kernel regression, $K$ is a kernel such as the Gaussian kernel. The hyper-parameter $h$, which control the variance-bias tradeoff of the estimate, is chosen via cross-validation.    
+Concretely, the adaptive binning procedure is described as follows:
 
-\section{Local likelihood for calculating calibration score}
+Data: A set of $n$ data points $\{(q_1, y_1), (q_2, y_2), \cdots, (q_n, y_n)\}$.
 
-When y is a binary variable, local likelihood (LL) is shown to be more effective that other methods that do not restrict the estimated values to be between 0 and 1 (CITE Frolich). LL is the local variant of logistic regression where the value at each point is modeled by logistic function parametrized by a parameter vector $\theta_x$:
+Parameter: bin size $b$, the number of points in each bin.
 
-$$\hat{f}(x) = \frac{e^{\theta^*_x}}{1 + e^{\theta^*_x}}$$ where 
-$$\theta^*_x = arg\max_{\theta_x}\sum_{i=1}^n K\left(\frac{x_i - x}{h}\right)\left(y_i\theta_x^{\top}(x_i - x) - \log(1 + e^{\theta_x^{\top}(x_i - x)})\right)$$
+Step 1: Sort the data points by $q_i$ in ascending order.
+
+Step 2: Label the $k^{th}$ data point in the sorted order by $\lfloor \frac{k - 1}{b}\rfloor + 1$.
+
+Step 3: Put all the points that have the same label in one bin. If the last bin has size less than $b$, merge it with the second last bin (if exits). Let $\{B_1, B_2, \cdots, B_T\}$ be the set of bins obtained.  
+
+Step 4: For all points $k$ in some bin $B_i$, define:
+
+$$\hat{p}_i = \frac{1}{|B_i|}\sum_{i \in B_i}y_i$$ and
+$$\hat{q}_i = \frac{1}{|B_i|}\sum_{i \in B_i}q_i$$
+
+Step 5: The MSE calibration score is calculated as:
+
+$$CalibMSE = \frac{1}{n}\sum_{i=1}^T|B_i|(\hat{q}_i - \hat{p}_i)^2$$
+
+\subsection{Confidence interval estimation}
+
+The 95\% confidence interval for $\hat{p}_i$ is approximated by:
+
+$$\hat{p}_i \pm 1.96 \hat{se}_i$$ where $\hat{se}_i = \sqrt{\frac{\hat{p}_i\left(1 - \hat{p}_i\right)}{|B_i|}}$ is the standard error at for the $i^{th}$ bin.
+
+It should be clear that the above formula is only an estimate of the confidence interval and thus does not guarantee true coverage. However, we found that this method is simple to implement and works well in practice.
+
+In order to obtain the confidence interval for the MSE score, we use the following sampling procedure:
+
+Data: A set of approximations $\{\hat{p}_1, \hat{p}_2, \cdots, \hat{p}_T\}$.
+
+Parameter: Number of samples $N_{s}$.
+
+Step 1: Sample $N_{s}$ times. Each time, for i from 1 to T, draw $\hat{p}^*_i \sim \mathcal{N}\left(\hat{p}_i, \hat{se}^2_i\right)$.   
+
+Step 2: Report 95\% confidence interval for the calibration score as:
+
+$$CalibMSE_{avg} \pm 1.96\hat{se}_{MSE}$$ where $CalibMSE_{avg}$ and $\hat{se}_{MSE}$ are the mean and the standard error of the MSE calibration scores calculated from the samples. 
+
+\section{Visualize calibration}
+
+To have a more general view of a model's degree of miscalibration, we can plot on the pairs $(\hat{p}_1, \hat{q}_1), (\hat{p}_2, \hat{q}_2), \cdots, (\hat{p}_T, \hat{q}_T)$ obtained from the adaptive binning procedure and visualize the \textit{calibration curve} of the model (Figure BLAH BLAH). Calibration curve provides a fine-grained insight into the behavior of the model. To be perfectly calibrated, the curve has to coincide with the diagional line ``y = x'', or the \textit{perfect calibration curve} (PCC). At places where the calibration curve lies above the PCC, the model predicts with less confidence then it should have done. Converesely, the model is overconfident where the calibration curve lies below the PCC.
+
+An advantage of using the points obtained from the adaptive binning procedure in visualizing calibration is that the plot also captures the refinement aspect of the model. The distribution of points' x coordinates corresponds to the distribution of the model's predictions. On the other hand, if using equally spaced bins, one would need an extra plot to demonstrate that distribution. 
+
+\section{Applications of calibration in NLP}
+
+Calibration analysis is model-indepedent and can easily be applied to analyze posterior predictions of models for structure prediction problems. In this setting, binary events are well-defined as polar queries on (sub)structures of the model such as single words, entity-spans or parsing substree. It is not necessary to test whether a model is calibrated for all types of queries. Depending on different downstream taks, we want to have good calibration on different types of queries. Take syntatic parsing as an example. If the downstream tasks is a sentiment analysis tasks, it is important for the model to be reliable in predicting if a phrase is an adjective phrase. For a different application such as coreference resolution, we would care more about noun phrase's boundaries.
+
+\subsection{Sequence models}
 
 
+\subsection{Coreference resolution}
 
-\subsection{Miscalibration}
-
-\subsubsection{Visualizing miscalibration}
-
-Definition 3.1 helps us identify perfectly calibrated models. But what about models that do not fall into that category? A quick way to imagine about miscalibration is to visualize it by a \textit{reliability curve} or \textit{empirical calibration curve}. After bucketizing the model predictions, we obtain a set of frequency-predition pairs $(p_k, q_k)$. A calibration curve is a curve that smoothly connects the points $(p_k, q_k)$ in a 2D-plot (Figure BLAH BLAH). We also want to show the perfect calibration curve, which coincides to the diagional line $x=y$, for comparison. 
-
-\subsection{Calculate calibration score}
-\subsubsection{Local averaging}
-
-\subsubsection{Kernel regression}
-
-\section{Applications of calibration}
-
-\subsection{Calibration for structure prediction}
-
-NLP researchers pay tremendous attention to linguistic structure prediction models (POS, NER, parsing). The caliration concept can also be applied to analyse the posterior predictions of these type of models. In this setting, $y$ is not a single label but is a linguistic structure (parse (sub)trees, linear spans). A structure-predictive model assigns a probabilistic prediction $q$ on each structure $y$. 
-
-We define $f(y)$ to be a binary-valued query function of the structure. For example, for a PCFG parsing model, $f(y)$ might denote whether particular span is an NP; for coreference resolution, it might denote whether the first and the sixth mentions belong to the same entity. We can the apply the same calibration framework for binary variables to assess calibration for the model. 
-
-\textbf{Definition 4.1}. Let $p_q = P(f(y) = 1 \mid q)$, the realistic frequency with respect to $q$. A structure-predictive model is said to be \textit{perfectly calibrated} with respect to the query $f(y)$ if and only if:
-$$p_q = q \hspace{1cm} \forall q \in [0, 1].$$  
-
-Verification of calibration and measurement of miscalibration are conducted using the same methods described for binary varibables by regarding $f(y)$ as the binary variable. 
-
-\subsection{Calibration for continuous variable}
 
 %%TODO:
 
