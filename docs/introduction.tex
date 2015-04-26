@@ -9,8 +9,8 @@ Knowledge about the uncertainty of predictions is also useful for users of NLP s
 In this thesis, we propose \textit{calibration analysis} as a procedure for measuring the quality of the posterior predictions of probabilistic models. Calibration analysis is a powerful assessment tool for three reasons. First, perfect calibration is one of two main conditions for being perfect at probabilistic prediction. Second, calibration analysis is simple to conduct and the results can be easily comminucated to the users through a numerical score or a visualizable plot. Third, calibration analysis is extremely flexible. It is model-independent and application-independent. It can be applied to various types of output depending on the application of interest as long as we have a mechanism to obtain confidence scores from the model. The contributions of this work are: 
 
 \begin{enumerate}
-  \item Review a theoretical foundation for calibration analysis for NLP probabilistic models.
-  \item Describe a procedure to conduct calibration analysis on a model. Also, present two methods for reporting results of the anlysis: calibration scoring and calibration curve plotting.
+  \item Review the theoretical foundation for calibration analysis for NLP probabilistic models.
+  \item Describe adaptive binning as a simple nonparametric regression method for calibration analysis. Also, present two means of reporting results of the anlysis: calibration scoring and calibration curve plotting.
   \item Apply calibration analysis to investigating reliability of models for POS tagging and coreference resolution. Especially, for coreference resolution, demonstrate a Monte Carlo sampling technique for approximate the confidence scores, which are complicated to compute exactly.   
 \end{enumerate}
 

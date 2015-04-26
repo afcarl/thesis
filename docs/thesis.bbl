@@ -1,9 +1,41 @@
-\begin{thebibliography}{2}
+\begin{thebibliography}{8}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Davis et~al.(2007)Davis, Charlton, Godward, Jones, Harrison, and
+  Wilson]{davis2007adaptive}
+Richard~A Davis, Adrian~J Charlton, John Godward, Stephen~A Jones, Mark
+  Harrison, and Julie~C Wilson.
+\newblock Adaptive binning: An improved binning method for metabolomics data
+  using the undecimated wavelet transform.
+\newblock \emph{Chemometrics and intelligent laboratory systems}, 85\penalty0
+  (1):\penalty0 144--154, 2007.
+
+\bibitem[DeGroot and Fienberg(1983)]{degroot1983comparison}
+Morris~H DeGroot and Stephen~E Fienberg.
+\newblock The comparison and evaluation of forecasters.
+\newblock \emph{The statistician}, pages 12--22, 1983.
+
+\bibitem[Draper(1995)]{draper1995assessment}
+David Draper.
+\newblock Assessment and propagation of model uncertainty.
+\newblock \emph{Journal of the Royal Statistical Society. Series B
+  (Methodological)}, pages 45--97, 1995.
+
+\bibitem[Fr{\"o}lich(2006)]{frolich2006non}
+Markus Fr{\"o}lich.
+\newblock Non-parametric regression for binary dependent variables.
+\newblock \emph{The Econometrics Journal}, 9\penalty0 (3):\penalty0 511--540,
+  2006.
+
+\bibitem[Leow and Li(2004)]{leow2004analysis}
+Wee~Kheng Leow and Rui Li.
+\newblock The analysis and applications of adaptive-binning color histograms.
+\newblock \emph{Computer Vision and Image Understanding}, 94\penalty0
+  (1):\penalty0 67--91, 2004.
 
 \bibitem[Sutton and McCallum(2005)]{sutton2005joint}
 Charles Sutton and Andrew McCallum.
@@ -11,6 +43,11 @@ Charles Sutton and Andrew McCallum.
 \newblock In \emph{Proceedings of the Ninth Conference on Computational Natural
   Language Learning}, pages 225--228. Association for Computational
   Linguistics, 2005.
+
+\bibitem[Wasserman(2006)]{wasserman2006all}
+Larry Wasserman.
+\newblock \emph{All of nonparametric statistics}.
+\newblock Springer Science \& Business Media, 2006.
 
 \bibitem[Wellner et~al.(2004)Wellner, McCallum, Peng, and
   Hay]{wellner2004integrated}
