@@ -1,16 +1,14 @@
 \chapter{Report and discussion of research results}
 
-\section{Comparison of miscalibration between Hidden Markov Models and Condition Random Fields}
+\section{Part-of-speech tagging}
 
-We suspect that the characteristic of a probabilistic model is a factor that affects miscalibration in structure predictions. Therefore, we choose to compare between the two most widely used classes of models in structure predictions, Hidden Markov Models (HMMs) and Conditional Random Fields (CRFs). They are fundamentally different in their objective functions: HMMs are generative models which learn the joint distribution of the observations and the labels whereas CRFs are discriminative and model directly the conditional distribution of the observations given the labels. We perform our experiements on two common structure prediction tasks: part-of-speech tagging (POS) and named-entity recognition. 
+\subsection{Data}
 
-\subsection{Part-of-speech tagging}
+We extract WSJ articles from the CoNLL-2011 dataset for this experiment. The original data set has already been splitted the into training, development and testing sets so we filter WSJ articles from each set and join the sentences into together. This process results in 11772 sentences for training, 1632 sentences for development and 1382 sentences for testing. The query tested is whether a word has the ``NN'' tag.
 
-\subsubsection{Data}
+We train a HMM model using maximum likelihood principle. For CRF training, we implement the L2-regularized mini-batch AdaGrad method with a batch size of 100.   
 
-We extract articles from the Wall Street Journal (WSJ) from the CoNLL-2011 dataset for this experiment. The CoNLL has already been splitted the into training, development and testing sets so we only have to filter WSJ articles from those sets and join sentences in each set of articles into a single file. This process results in 11772 sentences for training, 1632 sentences for development and 1382 sentences for testing. The predictions we are testing is whether a word has the ``NN'' tag. 
-
-\subsubsection{Results}
+\subsection{Results}
 
 \begin{figure}[t]
 \minipage{0.32\textwidth}
@@ -30,14 +28,14 @@ We extract articles from the Wall Street Journal (WSJ) from the CoNLL-2011 datas
 \endminipage
 \end{figure}
 
-First of all, we compare a standard HMM with a CRF model with basic features (CRF-Basic). CRF-Basic contains only the emission features (pairs of the tag and the current token at each position) and the transition features (pairs of labels). Using CRF-Basic allows us to separate the characteristics of the model dependencies from the advantages of having features. The plots of calibration curves of the two models are shown in figure \ref{fig:pos_hmm_pred}. CRF-basic intuitively produces a better curve than HMM. Concretely, the miscalibration of CRF-Basic is roughly 1.8 times larger than that of HMM (0.019 vs. 0.035). Moreover, as seen from the distributions of points in the plots, CRF-Basic produces sharper predictions.
+Firstly, we compare HMM with a CRF model with basic features (CRF-Basic). As mentioned in section 3.4.1, CRF-Basic contains only the transition features and the emission features. Figure \ref{fig:pos_hmm_pred} shows calibration curves of the two models. CRF-Basic attains a significantly lower MSE calibration score than HMM does (0.019 vs. 0.035). Moreover, it also produces more refined predictions than those of HMM, as seen from the distributions of points along the x-axis.
 
-To measure fully the power of the CRF model, we add more features to it, including surrounding words, word shape, word length, prefixes and suffixes. This model, called CRF-Advanced, achieves a 96\% accuraccy on the task. It produces an extremely good posterior distribution. Figure \ref{fig:pos_crf_advanced_pred} shows its perfect calibration curve, which is just slightly off the perfect calibration line (calibration score = 0.018). 
+To measure the affect of features on calibration, we conduct an ablation test for CRF. including surrounding words, word shape, word length, prefixes and suffixes. As we discover that as we use better template for CRF, we obtain more refined and calibrated predictions (FIGURE blah blah). A fully featurized CRF, which achieves a 96\% accuraccy on the task, produces a calibration curve just slightly off the PCC. 
 
-\subsection{Twitter part-of-speech tagging}
-\subsubsection{Data}
+\section{Twitter part-of-speech tagging}
+\subsection{Data}
 
-We repeat our comparision between HMMs and CRFs on a harder task, predicting POS tags for tweets. We use the ARK's Twitter POS data set (CITE NOAH), which consists of 1000 sentences for training, 327 sentences for development, 500 sentences for testing. The predictions we test is to predict whether a word has the ``V'' tag. 
+We repeat our comparision between HMMs and CRFs on a harder task, predicting POS tags for tweets. We use the ARK's Twitter POS data set (CITE NOAH), which consists of 1000 sentences for training, 327 sentences for development, 500 sentences for testing. The query tested is whether a word has the ``V'' tag. 
 
 We conduct the same experiments as in Section BLAH BLAH and obtain similar patterns. CRF-Basic's miscalibration is about half HMM's (Figure \ref{fig:pos_tweet_hmm_pred}). On the other hand, equipped with better features, CRF-Advanced demonstrates a significant improvement from CRF-Basic, reducing further the miscalibration level by one half. It should also be noticed that CRF-Advanced does not give perfectly accurate predictions (87\% accuracy) but those are reliable predictions.   
 

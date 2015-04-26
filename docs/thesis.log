@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/Debian) (preloaded format=pdflatex 2015.3.15)  24 APR 2015 22:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/Debian) (preloaded format=pdflatex 2015.3.15)  26 APR 2015 00:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -55,9 +55,16 @@ File: umthstd.clo 2003/10/16 20:56:33 1.12 U.Mass. thesis frontmatter option
 \umassthesis@baseskipfootins=\skip46
 
 Patching footnotetext succeeded
-) (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/natbib/natbib.sty
+Package: natbib 2010/09/13 8.31b (PWD, AO)
+\bibhang=\skip47
+\bibsep=\skip48
+LaTeX Info: Redefining \cite on input line 694.
+\c@NAT@ctr=\count94
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2013/01/14 v2.14 AMS math features
-\@mathmargin=\skip47
+\@mathmargin=\skip49
 
 For additional information on amsmath, use the `?' option.
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
@@ -75,13 +82,13 @@ Package: amsbsy 1999/11/29 v1.2d
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 1999/12/14 v2.01 operator names
 )
-\inf@bad=\count94
+\inf@bad=\count95
 LaTeX Info: Redefining \frac on input line 210.
-\uproot@=\count95
-\leftroot@=\count96
+\uproot@=\count96
+\leftroot@=\count97
 LaTeX Info: Redefining \overline on input line 306.
-\classnum@=\count97
-\DOTSCASE@=\count98
+\classnum@=\count98
+\DOTSCASE@=\count99
 LaTeX Info: Redefining \ldots on input line 378.
 LaTeX Info: Redefining \dots on input line 381.
 LaTeX Info: Redefining \cdots on input line 466.
@@ -90,15 +97,15 @@ LaTeX Info: Redefining \cdots on input line 466.
 \big@size=\dimen105
 LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
-\macc@depth=\count99
-\c@MaxMatrixCols=\count100
+\macc@depth=\count100
+\c@MaxMatrixCols=\count101
 \dotsspace@=\muskip10
-\c@parentequation=\count101
-\dspbrk@lvl=\count102
+\c@parentequation=\count102
+\dspbrk@lvl=\count103
 \tag@help=\toks15
-\row@=\count103
-\column@=\count104
-\maxfields@=\count105
+\row@=\count104
+\column@=\count105
+\maxfields@=\count106
 \andhelp@=\toks16
 \eqnshift@=\dimen106
 \alignsep@=\dimen107
@@ -107,8 +114,8 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
 \totwidth@=\dimen110
 \lineht@=\dimen111
 \@envbody=\toks17
-\multlinegap=\skip48
-\multlinetaggap=\skip49
+\multlinegap=\skip50
+\multlinetaggap=\skip51
 \mathdisplay@stack=\toks18
 LaTeX Info: Redefining \[ on input line 2665.
 LaTeX Info: Redefining \] on input line 2666.
@@ -140,7 +147,7 @@ Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
 Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 )
-\Gread@gobject=\count106
+\Gread@gobject=\count107
 ))
 \Gin@req@height=\dimen112
 \Gin@req@width=\dimen113
@@ -156,7 +163,7 @@ Package: xkeyval 2014/05/25 v2.7 package option processing (HA)
 \XKV@toks=\toks20
 \XKV@tempa@toks=\toks21
 )
-\XKV@depth=\count107
+\XKV@depth=\count108
 File: xkeyval.tex 2014/05/25 v2.7 key=value parser (HA)
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/adjustbox/adjcalc.sty
@@ -186,12 +193,12 @@ File: tc-pdftex.def 2012/05/13 v1.0 Clipping driver for pdftex
 
 (/usr/share/texlive/texmf-dist/tex/latex/ifoddpage/ifoddpage.sty
 Package: ifoddpage 2011/09/13 v1.0 Conditionals for odd/even page detection
-\c@checkoddpage=\count108
+\c@checkoddpage=\count109
 )
 (/usr/share/texlive/texmf-dist/tex/latex/varwidth/varwidth.sty
 Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
 \@vwid@box=\box29
-\sift@deathcycles=\count109
+\sift@deathcycles=\count110
 \@vwid@loff=\dimen122
 \@vwid@roff=\dimen123
 ))
@@ -200,31 +207,31 @@ Did not detect hyperref package
 (./method.aux) (./results.aux) (./results2.aux))
 \openout1 = `thesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 111.
-LaTeX Font Info:    ... okay on input line 111.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 111.
-LaTeX Font Info:    ... okay on input line 111.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 111.
-LaTeX Font Info:    ... okay on input line 111.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 111.
-LaTeX Font Info:    ... okay on input line 111.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 111.
-LaTeX Font Info:    ... okay on input line 111.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 111.
-LaTeX Font Info:    ... okay on input line 111.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 112.
+LaTeX Font Info:    ... okay on input line 112.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 112.
+LaTeX Font Info:    ... okay on input line 112.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 112.
+LaTeX Font Info:    ... okay on input line 112.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 112.
+LaTeX Font Info:    ... okay on input line 112.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 112.
+LaTeX Font Info:    ... okay on input line 112.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 112.
+LaTeX Font Info:    ... okay on input line 112.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count110
+\scratchcounter=\count111
 \scratchdimen=\dimen124
 \scratchbox=\box30
-\nofMPsegments=\count111
-\nofMParguments=\count112
+\nofMPsegments=\count112
+\nofMParguments=\count113
 \everyMPshowfont=\toks22
-\MPscratchCnt=\count113
+\MPscratchCnt=\count114
 \MPscratchDim=\dimen125
-\MPnumerator=\count114
-\makeMPintoPDFobject=\count115
+\MPnumerator=\count115
+\makeMPintoPDFobject=\count116
 \everyMPtoPDFconversion=\toks23
 ) (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
@@ -293,18 +300,6 @@ Missing character: There is no ô in font cmr12!
 
  (./introduction.tex
 Chapter 1.
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ú in font cmr12!
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ù in font cmr12!
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ú in font cmr12!
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ù in font cmr12!
 [3
 
 
@@ -327,51 +322,50 @@ Chapter 3.
 
 
 
-] [8] [9] [10] [11] [12]) [13] [14]
+] [8] [9] [10] [11] [12] [13] [14]) [15]
 \openout2 = `results.aux'.
 
  (./results.tex
 Chapter 4.
-<pos_hmm_pred.jpg, id=57, 1003.75pt x 1003.75pt>
+<pos_hmm_pred.jpg, id=60, 1003.75pt x 1003.75pt>
 File: pos_hmm_pred.jpg Graphic file (type jpg)
  <use pos_hmm_pred.jpg>
-Package pdftex.def Info: pos_hmm_pred.jpg used on input line 17.
+Package pdftex.def Info: pos_hmm_pred.jpg used on input line 15.
 (pdftex.def)             Requested size: 138.76157pt x 138.7627pt.
 
-<pos_crf_pred.jpg, id=58, 1003.75pt x 1003.75pt>
+<pos_crf_pred.jpg, id=61, 1003.75pt x 1003.75pt>
 File: pos_crf_pred.jpg Graphic file (type jpg)
  <use pos_crf_pred.jpg>
-Package pdftex.def Info: pos_crf_pred.jpg used on input line 22.
+Package pdftex.def Info: pos_crf_pred.jpg used on input line 20.
 (pdftex.def)             Requested size: 138.76157pt x 138.7627pt.
 
-Underfull \hbox (badness 4132) in paragraph at lines 23--23
+Underfull \hbox (badness 4132) in paragraph at lines 21--21
 []\OT1/cmr/bx/n/12 Figure 4.2. \OT1/cmr/m/n/12 Cal-i-bra-
  []
 
-<pos_crf_advanced_pred.jpg, id=59, 1003.75pt x 1003.75pt>
+<pos_crf_advanced_pred.jpg, id=62, 1003.75pt x 1003.75pt>
 File: pos_crf_advanced_pred.jpg Graphic file (type jpg)
 
 <use pos_crf_advanced_pred.jpg>
-Package pdftex.def Info: pos_crf_advanced_pred.jpg used on input line 27.
+Package pdftex.def Info: pos_crf_advanced_pred.jpg used on input line 25.
 (pdftex.def)             Requested size: 138.76157pt x 138.7627pt.
 
-Underfull \hbox (badness 1924) in paragraph at lines 28--28
+Underfull \hbox (badness 1924) in paragraph at lines 26--26
 \OT1/cmr/m/n/12 curve for CRF-Advanced
  []
 
-[15
+[16
 
 
 
-] [16 <./pos_hmm_pred.jpg> <./pos_crf_pred.jpg> <./pos_crf_advanced_pred.jpg>] 
-<pos_tweet_hmm_pred.jpg, id=66, 1003.75pt x 1003.75pt>
+] <pos_tweet_hmm_pred.jpg, id=66, 1003.75pt x 1003.75pt>
 File: pos_tweet_hmm_pred.jpg Graphic file (type jpg)
 
 <use pos_tweet_hmm_pred.jpg>
-Package pdftex.def Info: pos_tweet_hmm_pred.jpg used on input line 46.
+Package pdftex.def Info: pos_tweet_hmm_pred.jpg used on input line 44.
 (pdftex.def)             Requested size: 138.76157pt x 138.7627pt.
 
-Underfull \hbox (badness 4132) in paragraph at lines 47--47
+Underfull \hbox (badness 4132) in paragraph at lines 45--45
 []\OT1/cmr/bx/n/12 Figure 4.4. \OT1/cmr/m/n/12 Cal-i-bra-
  []
 
@@ -379,27 +373,28 @@ Underfull \hbox (badness 4132) in paragraph at lines 47--47
 File: pos_tweet_crf_pred.jpg Graphic file (type jpg)
 
 <use pos_tweet_crf_pred.jpg>
-Package pdftex.def Info: pos_tweet_crf_pred.jpg used on input line 51.
+Package pdftex.def Info: pos_tweet_crf_pred.jpg used on input line 49.
 (pdftex.def)             Requested size: 138.76157pt x 138.7627pt.
 
 <pos_tweet_crf_advanced_pred.jpg, id=68, 1003.75pt x 1003.75pt>
 File: pos_tweet_crf_advanced_pred.jpg Graphic file (type jpg)
 
 <use pos_tweet_crf_advanced_pred.jpg>
-Package pdftex.def Info: pos_tweet_crf_advanced_pred.jpg used on input line 56.
+Package pdftex.def Info: pos_tweet_crf_advanced_pred.jpg used on input line 54.
 
 (pdftex.def)             Requested size: 138.76157pt x 138.7627pt.
 
-Underfull \hbox (badness 1924) in paragraph at lines 57--57
+Underfull \hbox (badness 1924) in paragraph at lines 55--55
 \OT1/cmr/m/n/12 curve for CRF-Advanced
  []
 
-) [17 <./pos_tweet_hmm_pred.jpg> <./pos_tweet_crf_pred.jpg> <./pos_tweet_crf_ad
-vanced_pred.jpg>]
+) [17 <./pos_hmm_pred.jpg> <./pos_crf_pred.jpg> <./pos_crf_advanced_pred.jpg>]
+[18 <./pos_tweet_hmm_pred.jpg> <./pos_tweet_crf_pred.jpg> <./pos_tweet_crf_adva
+nced_pred.jpg>]
 \openout2 = `results2.aux'.
 
  (./results2.tex
-<calibrated_binsize_score_log_scale.png, id=72, 586.8324pt x 442.2924pt>
+<calibrated_binsize_score_log_scale.png, id=75, 586.8324pt x 442.2924pt>
 File: calibrated_binsize_score_log_scale.png Graphic file (type png)
 
 <use calibrated_binsize_score_log_scale.png>
@@ -407,21 +402,21 @@ Package pdftex.def Info: calibrated_binsize_score_log_scale.png used on input l
 ine 20.
 (pdftex.def)             Requested size: 216.81pt x 163.40266pt.
 
-<calibrated_binsize_score.png, id=74, 586.8324pt x 442.2924pt>
+<calibrated_binsize_score.png, id=77, 586.8324pt x 442.2924pt>
 File: calibrated_binsize_score.png Graphic file (type png)
 
 <use calibrated_binsize_score.png>
 Package pdftex.def Info: calibrated_binsize_score.png used on input line 25.
 (pdftex.def)             Requested size: 216.81pt x 163.40266pt.
 
-<uncalibrated_binsize_score.png, id=75, 586.8324pt x 442.2924pt>
+<uncalibrated_binsize_score.png, id=78, 586.8324pt x 442.2924pt>
 File: uncalibrated_binsize_score.png Graphic file (type png)
 
 <use uncalibrated_binsize_score.png>
 Package pdftex.def Info: uncalibrated_binsize_score.png used on input line 30.
 (pdftex.def)             Requested size: 216.81pt x 163.40266pt.
 
-<calibrated_sampleSize_score.png, id=76, 586.8324pt x 442.2924pt>
+<calibrated_sampleSize_score.png, id=79, 586.8324pt x 442.2924pt>
 File: calibrated_sampleSize_score.png Graphic file (type png)
 
 <use calibrated_sampleSize_score.png>
@@ -429,77 +424,46 @@ Package pdftex.def Info: calibrated_sampleSize_score.png used on input line 41.
 
 (pdftex.def)             Requested size: 216.81pt x 163.40266pt.
 
-<uncalibrated_sampleSize_score.png, id=77, 586.8324pt x 442.2924pt>
+<uncalibrated_sampleSize_score.png, id=80, 586.8324pt x 442.2924pt>
 File: uncalibrated_sampleSize_score.png Graphic file (type png)
 
 <use uncalibrated_sampleSize_score.png>
 Package pdftex.def Info: uncalibrated_sampleSize_score.png used on input line 4
 6.
 (pdftex.def)             Requested size: 216.81pt x 163.40266pt.
- [18
+ [19
 
 
-] [19 <./calibrated_binsize_score_log_scale.png> <./calibrated_binsize_score.pn
-g> <./uncalibrated_binsize_score.png>]) [20 <./calibrated_sampleSize_score.png>
- <./uncalibrated_sampleSize_score.png>]
-Chapter 5.
+] [20 <./calibrated_binsize_score_log_scale.png> <./calibrated_binsize_score.pn
+g> <./uncalibrated_binsize_score.png>]) [21 <./calibrated_sampleSize_score.png>
+ <./uncalibrated_sampleSize_score.png>] (./thesis.bbl) [22
 
-LaTeX Warning: \oval, \circle, or \line size unavailable on input line 269.
-
-
-LaTeX Warning: \oval, \circle, or \line size unavailable on input line 353.
-
-[1
-
-
-
-] [2] [3] [4] [5] [6]
-Chapter 6.
-[7
-
-]
-Chapter 7.
-[8
-
-]
-Appendix A.
-[9
-
-]
-Appendix B.
-(./thesis.bbl [10
-
-]) [11
 
 ] (./thesis.aux (./abstract.aux) (./introduction.aux)
 (./related.aux) (./method.aux) (./results.aux) (./results2.aux)) ) 
 Here is how much of TeX's memory you used:
- 3537 strings out of 493104
- 49832 string characters out of 6136932
- 123866 words of memory out of 5000000
- 6881 multiletter control sequences out of 15000+600000
- 9400 words of font info for 35 fonts, out of 8000000 for 9000
+ 3855 strings out of 493104
+ 53600 string characters out of 6136932
+ 125438 words of memory out of 5000000
+ 7197 multiletter control sequences out of 15000+600000
+ 8309 words of font info for 30 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 39i,9n,35p,1183b,343s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 39i,9n,35p,1294b,344s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/t
 exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf
 -dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/
 fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/t
 ype1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.
-pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></
-usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/sha
-re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/tex
-live/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/texlive/texmf-d
-ist/fonts/type1/public/amsfonts/latxfont/lcircle1.pfb>
-Output written on thesis.pdf (31 pages, 589562 bytes).
+blic/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy
+8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
+
+Output written on thesis.pdf (22 pages, 545761 bytes).
 PDF statistics:
- 182 PDF objects out of 1000 (max. 8388607)
- 116 compressed objects within 2 object streams
+ 132 PDF objects out of 1000 (max. 8388607)
+ 81 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  56 words of extra memory for PDF output out of 10000 (max. 10000000)
 

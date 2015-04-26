@@ -1,15 +1,23 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{2}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
 
-\bibitem{xyz}
-Barrett, Daniel~J., Ridgway, John V.~E., and Wileden, Jack~C.
-\newblock Why there are no sheep in our work.
-\newblock In {\em Proceedings of the Third Sheep Conference\/} (Edinburgh,
-  Scotland, Jan. 1997), Ian~McPherson Sheepish, Ed., American Sheepherders
-  Society, Sheepdip and Associates, pp.~39--45.
+\bibitem[Sutton and McCallum(2005)]{sutton2005joint}
+Charles Sutton and Andrew McCallum.
+\newblock Joint parsing and semantic role labeling.
+\newblock In \emph{Proceedings of the Ninth Conference on Computational Natural
+  Language Learning}, pages 225--228. Association for Computational
+  Linguistics, 2005.
 
-\bibitem{Bah}
-Scrooge, Ebenezer, and Shepherd, Alan.
-\newblock On the growth of green in space.
-\newblock {\em Journal of Astrophysical Economics 3}, 4 (August 1992), 47--89.
+\bibitem[Wellner et~al.(2004)Wellner, McCallum, Peng, and
+  Hay]{wellner2004integrated}
+Ben Wellner, Andrew McCallum, Fuchun Peng, and Michael Hay.
+\newblock An integrated, conditional model of information extraction and
+  coreference with application to citation matching.
+\newblock In \emph{Proceedings of the 20th conference on Uncertainty in
+  artificial intelligence}, pages 593--601. AUAI Press, 2004.
 
 \end{thebibliography}

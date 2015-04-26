@@ -4,48 +4,49 @@ The top-level auxiliary file: thesis.aux
 A level-1 auxiliary file: abstract.aux
 A level-1 auxiliary file: introduction.aux
 A level-1 auxiliary file: related.aux
-A level-1 auxiliary file: method1.aux
-A level-1 auxiliary file: method2.aux
-The style file: thesis.bst
+A level-1 auxiliary file: method.aux
+A level-1 auxiliary file: results.aux
+A level-1 auxiliary file: results2.aux
+The style file: plainnat.bst
 Database file #1: thesis.bib
 You've used 2 entries,
-            2249 wiz_defined-function locations,
-            548 strings with 4294 characters,
-and the built_in function-call counts, 789 in all, are:
-= -- 78
-> -- 33
-< -- 0
-+ -- 13
-- -- 11
-* -- 64
-:= -- 131
-add.period$ -- 6
+            2773 wiz_defined-function locations,
+            611 strings with 5416 characters,
+and the built_in function-call counts, 1305 in all, are:
+= -- 127
+> -- 60
+< -- 3
++ -- 20
+- -- 18
+* -- 91
+:= -- 182
+add.period$ -- 8
 call.type$ -- 2
-change.case$ -- 11
-chr.to.int$ -- 0
-cite$ -- 2
-duplicate$ -- 29
-empty$ -- 63
-format.name$ -- 11
-if$ -- 165
-int.to.chr$ -- 0
-int.to.str$ -- 2
+change.case$ -- 12
+chr.to.int$ -- 2
+cite$ -- 4
+duplicate$ -- 65
+empty$ -- 108
+format.name$ -- 22
+if$ -- 294
+int.to.chr$ -- 1
+int.to.str$ -- 1
 missing$ -- 2
-newline$ -- 13
-num.names$ -- 6
-pop$ -- 10
+newline$ -- 18
+num.names$ -- 8
+pop$ -- 30
 preamble$ -- 1
-purify$ -- 9
+purify$ -- 10
 quote$ -- 0
-skip$ -- 20
+skip$ -- 55
 stack$ -- 0
-substring$ -- 53
-swap$ -- 8
-text.length$ -- 0
+substring$ -- 68
+swap$ -- 22
+text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 8
+type$ -- 22
 warning$ -- 0
-while$ -- 10
-width$ -- 3
-write$ -- 25
+while$ -- 12
+width$ -- 0
+write$ -- 35
