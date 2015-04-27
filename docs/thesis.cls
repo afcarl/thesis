@@ -336,7 +336,7 @@
 \fi
 
 \renewcommand{\@makechapterhead}[1]{    % Heading for \chapter command
-  \vspace*{30\p@}                       % Space at top of text page.
+  \vspace*{5\p@}                       % Space at top of text page.
   \begin{center}\bfseries
     \ifnum \c@secnumdepth >\m@ne
       \MakeTextUppercase\@chapapp\ \thechapter % 'CHAPTER' and number.
@@ -804,3 +804,5 @@
 % silence hyperref warning about bookmark level
 \providecommand*{\toclevel@FrontMatter}{0}
 \providecommand*{\toclevel@Chapter}{0}
+
+\setlength\parindent{24pt}

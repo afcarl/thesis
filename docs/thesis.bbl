@@ -1,9 +1,27 @@
-\begin{thebibliography}{8}
+\begin{thebibliography}{22}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Canova(1994)]{canova1994statistical}
+Fabio Canova.
+\newblock Statistical inference in calibrated models.
+\newblock \emph{Journal of Applied Econometrics}, 9\penalty0 (S1):\penalty0
+  S123--S144, 1994.
+
+\bibitem[Caruana and Niculescu-Mizil(2006)]{caruana2006empirical}
+Rich Caruana and Alexandru Niculescu-Mizil.
+\newblock An empirical comparison of supervised learning algorithms.
+\newblock In \emph{Proceedings of the 23rd international conference on Machine
+  learning}, pages 161--168. ACM, 2006.
+
+\bibitem[Cooley(1997)]{cooley1997calibrated}
+Thomas~F Cooley.
+\newblock Calibrated models.
+\newblock \emph{Oxford Review of Economic Policy}, 13\penalty0 (3):\penalty0
+  55--69, 1997.
 
 \bibitem[Davis et~al.(2007)Davis, Charlton, Godward, Jones, Harrison, and
   Wilson]{davis2007adaptive}
@@ -25,11 +43,55 @@ David Draper.
 \newblock \emph{Journal of the Royal Statistical Society. Series B
   (Methodological)}, pages 45--97, 1995.
 
+\bibitem[Duchi et~al.(2011)Duchi, Hazan, and Singer]{duchi2011adaptive}
+John Duchi, Elad Hazan, and Yoram Singer.
+\newblock Adaptive subgradient methods for online learning and stochastic
+  optimization.
+\newblock \emph{The Journal of Machine Learning Research}, 12:\penalty0
+  2121--2159, 2011.
+
+\bibitem[Durrett and Klein(2013)]{durrett2013easy}
+Greg Durrett and Dan Klein.
+\newblock Easy victories and uphill battles in coreference resolution.
+\newblock In \emph{EMNLP}, pages 1971--1982, 2013.
+
+\bibitem[Durrett and Klein(2014)]{DurrettKlein2014}
+Greg Durrett and Dan Klein.
+\newblock A joint model for entity analysis: Coreference, typing, and linking.
+\newblock In \emph{Proceedings of the Transactions of the Association for
+  Computational Linguistics}, 2014.
+
+\bibitem[Finkel et~al.(2006)Finkel, Manning, and Ng]{finkel2006solving}
+Jenny~Rose Finkel, Christopher~D Manning, and Andrew~Y Ng.
+\newblock Solving the problem of cascading errors: Approximate bayesian
+  inference for linguistic annotation pipelines.
+\newblock In \emph{Proceedings of the 2006 Conference on Empirical Methods in
+  Natural Language Processing}, pages 618--626. Association for Computational
+  Linguistics, 2006.
+
 \bibitem[Fr{\"o}lich(2006)]{frolich2006non}
 Markus Fr{\"o}lich.
 \newblock Non-parametric regression for binary dependent variables.
 \newblock \emph{The Econometrics Journal}, 9\penalty0 (3):\penalty0 511--540,
   2006.
+
+\bibitem[Gimpel et~al.(2011)Gimpel, Schneider, O'Connor, Das, Mills,
+  Eisenstein, Heilman, Yogatama, Flanigan, and Smith]{gimpel2011part}
+Kevin Gimpel, Nathan Schneider, Brendan O'Connor, Dipanjan Das, Daniel Mills,
+  Jacob Eisenstein, Michael Heilman, Dani Yogatama, Jeffrey Flanigan, and
+  Noah~A Smith.
+\newblock Part-of-speech tagging for twitter: Annotation, features, and
+  experiments.
+\newblock In \emph{Proceedings of the 49th Annual Meeting of the Association
+  for Computational Linguistics: Human Language Technologies: short
+  papers-Volume 2}, pages 42--47. Association for Computational Linguistics,
+  2011.
+
+\bibitem[Huang and Chiang(2005)]{huang2005better}
+Liang Huang and David Chiang.
+\newblock Better k-best parsing.
+\newblock In \emph{Proceedings of the Ninth International Workshop on Parsing
+  Technology}, pages 53--64. Association for Computational Linguistics, 2005.
 
 \bibitem[Leow and Li(2004)]{leow2004analysis}
 Wee~Kheng Leow and Rui Li.
@@ -37,11 +99,47 @@ Wee~Kheng Leow and Rui Li.
 \newblock \emph{Computer Vision and Image Understanding}, 94\penalty0
   (1):\penalty0 67--91, 2004.
 
+\bibitem[Murphy(1993)]{murphy1993good}
+Allan~H Murphy.
+\newblock What is a good forecast? an essay on the nature of goodness in
+  weather forecasting.
+\newblock \emph{Weather and forecasting}, 8\penalty0 (2):\penalty0 281--293,
+  1993.
+
+\bibitem[Niculescu-Mizil and Caruana(2005)]{niculescu2005predicting}
+Alexandru Niculescu-Mizil and Rich Caruana.
+\newblock Predicting good probabilities with supervised learning.
+\newblock In \emph{Proceedings of the 22nd international conference on Machine
+  learning}, pages 625--632. ACM, 2005.
+
+\bibitem[Oreskes et~al.(1994)Oreskes, Shrader-Frechette, Belitz,
+  et~al.]{oreskes1994verification}
+Naomi Oreskes, Kristin Shrader-Frechette, Kenneth Belitz, et~al.
+\newblock Verification, validation, and confirmation of numerical models in the
+  earth sciences.
+\newblock \emph{Science}, 263\penalty0 (5147):\penalty0 641--646, 1994.
+
+\bibitem[Singh et~al.(2013)Singh, Riedel, Martin, Zheng, and
+  McCallum]{singh2013joint}
+Sameer Singh, Sebastian Riedel, Brian Martin, Jiaping Zheng, and Andrew
+  McCallum.
+\newblock Joint inference of entities, relations, and coreference.
+\newblock In \emph{Proceedings of the 2013 workshop on Automated knowledge base
+  construction}, pages 1--6. ACM, 2013.
+
 \bibitem[Sutton and McCallum(2005)]{sutton2005joint}
 Charles Sutton and Andrew McCallum.
 \newblock Joint parsing and semantic role labeling.
 \newblock In \emph{Proceedings of the Ninth Conference on Computational Natural
   Language Learning}, pages 225--228. Association for Computational
+  Linguistics, 2005.
+
+\bibitem[Toutanova et~al.(2005)Toutanova, Haghighi, and
+  Manning]{toutanova2005joint}
+Kristina Toutanova, Aria Haghighi, and Christopher~D Manning.
+\newblock Joint learning improves semantic role labeling.
+\newblock In \emph{Proceedings of the 43rd Annual Meeting on Association for
+  Computational Linguistics}, pages 589--596. Association for Computational
   Linguistics, 2005.
 
 \bibitem[Wasserman(2006)]{wasserman2006all}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/Debian) (preloaded format=pdflatex 2015.3.15)  26 APR 2015 13:35
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/Debian) (preloaded format=pdflatex 2015.3.15)  27 APR 2015 03:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -202,37 +202,88 @@ Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
 \@vwid@loff=\dimen122
 \@vwid@roff=\dimen123
 ))
+(/usr/share/texlive/texmf-dist/tex/latex/caption/subcaption.sty
+Package: subcaption 2013/02/03 v1.1-62 Sub-captions (AR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2013/05/02 v3.3-89 Customizing captions (AR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2013/05/02 v1.6-88 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 57.
+\captionmargin=\dimen124
+\captionmargin@=\dimen125
+\captionwidth=\dimen126
+\caption@tempdima=\dimen127
+\caption@indent=\dimen128
+\caption@parindent=\dimen129
+\caption@hangindent=\dimen130
+Package caption Info: Unknown document class (or package),
+(caption)             standard defaults will be used.
+)
+
+Package caption Warning: Unsupported document class (or package) detected,
+(caption)                usage of the caption package is not recommended.
+See the caption package documentation for explanation.
+
+Package caption Info: \@makecaption = \long macro:#1#2->\addvspace {\abovecapti
+onskip } \sbox \@tempboxa {\textbf {#1.} #2}\ifdim \wd \@tempboxa >\hsize \text
+bf {#1.} #2\par \else \global \@minipagefalse \hb@xt@ \hsize {\hfil \box \@temp
+boxa \hfil }\fi \par \vskip \belowcaptionskip \par .
+\c@ContinuedFloat=\count111
+)
+\c@subfigure=\count112
+\c@subtable=\count113
+) (/usr/share/texlive/texmf-dist/tex/latex/tools/tabularx.sty
+Package: tabularx 2014/05/13 v2.10 `tabularx' package (DPC)
+
+(/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
+Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
+\col@sep=\dimen131
+\extrarowheight=\dimen132
+\NC@list=\toks22
+\extratabsurround=\skip52
+\backup@length=\skip53
+)
+\TX@col@width=\dimen133
+\TX@old@table=\dimen134
+\TX@old@col=\dimen135
+\TX@target=\dimen136
+\TX@delta=\dimen137
+\TX@cols=\count114
+\TX@ftn=\toks23
+)
 Did not detect hyperref package
 (./thesis.aux (./abstract.aux) (./introduction.aux) (./related.aux)
-(./method.aux) (./results.aux) (./results2.aux))
+(./method.aux) (./results.aux))
 \openout1 = `thesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 112.
-LaTeX Font Info:    ... okay on input line 112.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 112.
-LaTeX Font Info:    ... okay on input line 112.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 112.
-LaTeX Font Info:    ... okay on input line 112.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 112.
-LaTeX Font Info:    ... okay on input line 112.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 112.
-LaTeX Font Info:    ... okay on input line 112.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 112.
-LaTeX Font Info:    ... okay on input line 112.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 114.
+LaTeX Font Info:    ... okay on input line 114.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 114.
+LaTeX Font Info:    ... okay on input line 114.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 114.
+LaTeX Font Info:    ... okay on input line 114.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 114.
+LaTeX Font Info:    ... okay on input line 114.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 114.
+LaTeX Font Info:    ... okay on input line 114.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 114.
+LaTeX Font Info:    ... okay on input line 114.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count111
-\scratchdimen=\dimen124
+\scratchcounter=\count115
+\scratchdimen=\dimen138
 \scratchbox=\box30
-\nofMPsegments=\count112
-\nofMParguments=\count113
-\everyMPshowfont=\toks22
-\MPscratchCnt=\count114
-\MPscratchDim=\dimen125
-\MPnumerator=\count115
-\makeMPintoPDFobject=\count116
-\everyMPtoPDFconversion=\toks23
+\nofMPsegments=\count116
+\nofMParguments=\count117
+\everyMPshowfont=\toks24
+\MPscratchCnt=\count118
+\MPscratchDim=\dimen139
+\MPnumerator=\count119
+\makeMPintoPDFobject=\count120
+\everyMPtoPDFconversion=\toks25
 ) (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
 )
@@ -281,6 +332,9 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
+
 [1
 
 
@@ -327,142 +381,105 @@ Chapter 3.
 
  (./results.tex
 Chapter 4.
-<pos_hmm_pred.jpg, id=63, 1003.75pt x 1003.75pt>
-File: pos_hmm_pred.jpg Graphic file (type jpg)
- <use pos_hmm_pred.jpg>
-Package pdftex.def Info: pos_hmm_pred.jpg used on input line 15.
+<pos_hmm.jpg, id=63, 1003.75pt x 1003.75pt>
+File: pos_hmm.jpg Graphic file (type jpg)
+ <use pos_hmm.jpg>
+Package pdftex.def Info: pos_hmm.jpg used on input line 24.
 (pdftex.def)             Requested size: 138.76157pt x 138.7627pt.
 
-<pos_crf_pred.jpg, id=64, 1003.75pt x 1003.75pt>
-File: pos_crf_pred.jpg Graphic file (type jpg)
- <use pos_crf_pred.jpg>
-Package pdftex.def Info: pos_crf_pred.jpg used on input line 20.
+<pos_crf.jpg, id=64, 1003.75pt x 1003.75pt>
+File: pos_crf.jpg Graphic file (type jpg)
+ <use pos_crf.jpg>
+Package pdftex.def Info: pos_crf.jpg used on input line 29.
 (pdftex.def)             Requested size: 138.76157pt x 138.7627pt.
 
-Underfull \hbox (badness 4132) in paragraph at lines 21--21
-[]\OT1/cmr/bx/n/12 Figure 4.2. \OT1/cmr/m/n/12 Cal-i-bra-
- []
-
-<pos_crf_advanced_pred.jpg, id=65, 1003.75pt x 1003.75pt>
-File: pos_crf_advanced_pred.jpg Graphic file (type jpg)
-
-<use pos_crf_advanced_pred.jpg>
-Package pdftex.def Info: pos_crf_advanced_pred.jpg used on input line 25.
+<pos_crf_full.jpg, id=65, 1003.75pt x 1003.75pt>
+File: pos_crf_full.jpg Graphic file (type jpg)
+ <use pos_crf_full.jpg>
+Package pdftex.def Info: pos_crf_full.jpg used on input line 34.
 (pdftex.def)             Requested size: 138.76157pt x 138.7627pt.
 
-Underfull \hbox (badness 1924) in paragraph at lines 26--26
-\OT1/cmr/m/n/12 curve for CRF-Advanced
+Overfull \hbox (1.91364pt too wide) in alignment at lines 43--53
+[] [] [] 
  []
 
 [17
 
 
 
-] <pos_tweet_hmm_pred.jpg, id=69, 1003.75pt x 1003.75pt>
-File: pos_tweet_hmm_pred.jpg Graphic file (type jpg)
-
-<use pos_tweet_hmm_pred.jpg>
-Package pdftex.def Info: pos_tweet_hmm_pred.jpg used on input line 44.
+] [18 <./pos_hmm.jpg> <./pos_crf.jpg> <./pos_crf_full.jpg>]
+<pos_tweet_hmm.jpg, id=73, 1003.75pt x 1003.75pt>
+File: pos_tweet_hmm.jpg Graphic file (type jpg)
+ <use pos_tweet_hmm.jpg>
+Package pdftex.def Info: pos_tweet_hmm.jpg used on input line 68.
 (pdftex.def)             Requested size: 138.76157pt x 138.7627pt.
 
-Underfull \hbox (badness 4132) in paragraph at lines 45--45
-[]\OT1/cmr/bx/n/12 Figure 4.4. \OT1/cmr/m/n/12 Cal-i-bra-
+<pos_tweet_crf.jpg, id=74, 1003.75pt x 1003.75pt>
+File: pos_tweet_crf.jpg Graphic file (type jpg)
+ <use pos_tweet_crf.jpg>
+Package pdftex.def Info: pos_tweet_crf.jpg used on input line 73.
+(pdftex.def)             Requested size: 138.76157pt x 138.7627pt.
+
+<pos_tweet_crf_full.jpg, id=75, 1003.75pt x 1003.75pt>
+File: pos_tweet_crf_full.jpg Graphic file (type jpg)
+
+<use pos_tweet_crf_full.jpg>
+Package pdftex.def Info: pos_tweet_crf_full.jpg used on input line 78.
+(pdftex.def)             Requested size: 138.76157pt x 138.7627pt.
+
+Overfull \hbox (1.91364pt too wide) in alignment at lines 87--97
+[] [] [] 
  []
 
-<pos_tweet_crf_pred.jpg, id=70, 1003.75pt x 1003.75pt>
-File: pos_tweet_crf_pred.jpg Graphic file (type jpg)
+[19 <./pos_tweet_hmm.jpg> <./pos_tweet_crf.jpg> <./pos_tweet_crf_full.jpg>]
+<coref.jpg, id=80, 1003.75pt x 1003.75pt>
+File: coref.jpg Graphic file (type jpg)
+ <use coref.jpg>
+Package pdftex.def Info: coref.jpg used on input line 119.
+(pdftex.def)             Requested size: 173.44534pt x 173.43806pt.
 
-<use pos_tweet_crf_pred.jpg>
-Package pdftex.def Info: pos_tweet_crf_pred.jpg used on input line 49.
-(pdftex.def)             Requested size: 138.76157pt x 138.7627pt.
-
-<pos_tweet_crf_advanced_pred.jpg, id=71, 1003.75pt x 1003.75pt>
-File: pos_tweet_crf_advanced_pred.jpg Graphic file (type jpg)
-
-<use pos_tweet_crf_advanced_pred.jpg>
-Package pdftex.def Info: pos_tweet_crf_advanced_pred.jpg used on input line 54.
-
-(pdftex.def)             Requested size: 138.76157pt x 138.7627pt.
-
-Underfull \hbox (badness 1924) in paragraph at lines 55--55
-\OT1/cmr/m/n/12 curve for CRF-Advanced
+Overfull \hbox (2.61107pt too wide) in paragraph at lines 117--134
+[]$[]$ $[]$ 
  []
 
-) [18 <./pos_hmm_pred.jpg> <./pos_crf_pred.jpg> <./pos_crf_advanced_pred.jpg>]
-[19 <./pos_tweet_hmm_pred.jpg> <./pos_tweet_crf_pred.jpg> <./pos_tweet_crf_adva
-nced_pred.jpg>]
-\openout2 = `results2.aux'.
+) [20] [21 <./coref.jpg>]
+\openout2 = `conclusion.aux'.
 
- (./results2.tex
-<calibrated_binsize_score_log_scale.png, id=79, 586.8324pt x 442.2924pt>
-File: calibrated_binsize_score_log_scale.png Graphic file (type png)
-
-<use calibrated_binsize_score_log_scale.png>
-Package pdftex.def Info: calibrated_binsize_score_log_scale.png used on input l
-ine 20.
-(pdftex.def)             Requested size: 216.81pt x 163.40266pt.
-
-<calibrated_binsize_score.png, id=81, 586.8324pt x 442.2924pt>
-File: calibrated_binsize_score.png Graphic file (type png)
-
-<use calibrated_binsize_score.png>
-Package pdftex.def Info: calibrated_binsize_score.png used on input line 25.
-(pdftex.def)             Requested size: 216.81pt x 163.40266pt.
-
-<uncalibrated_binsize_score.png, id=82, 586.8324pt x 442.2924pt>
-File: uncalibrated_binsize_score.png Graphic file (type png)
-
-<use uncalibrated_binsize_score.png>
-Package pdftex.def Info: uncalibrated_binsize_score.png used on input line 30.
-(pdftex.def)             Requested size: 216.81pt x 163.40266pt.
-
-<calibrated_sampleSize_score.png, id=83, 586.8324pt x 442.2924pt>
-File: calibrated_sampleSize_score.png Graphic file (type png)
-
-<use calibrated_sampleSize_score.png>
-Package pdftex.def Info: calibrated_sampleSize_score.png used on input line 41.
-
-(pdftex.def)             Requested size: 216.81pt x 163.40266pt.
-
-<uncalibrated_sampleSize_score.png, id=84, 586.8324pt x 442.2924pt>
-File: uncalibrated_sampleSize_score.png Graphic file (type png)
-
-<use uncalibrated_sampleSize_score.png>
-Package pdftex.def Info: uncalibrated_sampleSize_score.png used on input line 4
-6.
-(pdftex.def)             Requested size: 216.81pt x 163.40266pt.
- [20
+ (./conclusion.tex
+Chapter 5.
+) [22
 
 
-] [21 <./calibrated_binsize_score_log_scale.png> <./calibrated_binsize_score.pn
-g> <./uncalibrated_binsize_score.png>]) [22 <./calibrated_sampleSize_score.png>
- <./uncalibrated_sampleSize_score.png>] (./thesis.bbl [23
+
+] (./thesis.bbl [23
 
 
-]) [24] (./thesis.aux (./abstract.aux) (./introduction.aux) (./related.aux) (./
-method.aux) (./results.aux) (./results2.aux)) ) 
+] [24]) [25] (./thesis.aux (./abstract.aux)
+(./introduction.aux) (./related.aux) (./method.aux) (./results.aux)
+(./conclusion.aux)) ) 
 Here is how much of TeX's memory you used:
- 3874 strings out of 493104
- 54064 string characters out of 6136932
- 125674 words of memory out of 5000000
- 7216 multiletter control sequences out of 15000+600000
- 8309 words of font info for 30 fonts, out of 8000000 for 9000
+ 5080 strings out of 493104
+ 74885 string characters out of 6136932
+ 148450 words of memory out of 5000000
+ 8414 multiletter control sequences out of 15000+600000
+ 9063 words of font info for 33 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 39i,9n,35p,1749b,344s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-r12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb>
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/
-share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/t
-exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on thesis.pdf (24 pages, 550455 bytes).
+ 60i,10n,94p,1762b,554s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+ex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.p
+fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmti12.pfb>
+Output written on thesis.pdf (25 pages, 537374 bytes).
 PDF statistics:
- 138 PDF objects out of 1000 (max. 8388607)
- 85 compressed objects within 1 object stream
+ 136 PDF objects out of 1000 (max. 8388607)
+ 90 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 56 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 36 words of extra memory for PDF output out of 10000 (max. 10000000)
 
