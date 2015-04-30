@@ -6,46 +6,49 @@ A level-1 auxiliary file: introduction.aux
 A level-1 auxiliary file: related.aux
 A level-1 auxiliary file: method.aux
 A level-1 auxiliary file: results.aux
+A level-1 auxiliary file: conclusion.aux
 The style file: plainnat.bst
 Database file #1: thesis.bib
-You've used 22 entries,
+Warning--can't use both volume and number fields in miller1962statistical
+You've used 28 entries,
             2773 wiz_defined-function locations,
-            733 strings with 9207 characters,
-and the built_in function-call counts, 11876 in all, are:
-= -- 1125
-> -- 593
-< -- 26
-+ -- 202
-- -- 180
-* -- 881
-:= -- 1713
-add.period$ -- 75
-call.type$ -- 22
-change.case$ -- 124
-chr.to.int$ -- 22
-cite$ -- 44
-duplicate$ -- 579
-empty$ -- 1005
-format.name$ -- 218
-if$ -- 2608
+            770 strings with 10303 characters,
+and the built_in function-call counts, 14572 in all, are:
+= -- 1367
+> -- 731
+< -- 32
++ -- 250
+- -- 222
+* -- 1095
+:= -- 2125
+add.period$ -- 94
+call.type$ -- 28
+change.case$ -- 155
+chr.to.int$ -- 28
+cite$ -- 57
+duplicate$ -- 708
+empty$ -- 1239
+format.name$ -- 268
+if$ -- 3174
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 23
-newline$ -- 118
-num.names$ -- 88
-pop$ -- 277
+missing$ -- 30
+newline$ -- 148
+num.names$ -- 112
+pop$ -- 342
 preamble$ -- 1
-purify$ -- 103
+purify$ -- 129
 quote$ -- 0
-skip$ -- 461
+skip$ -- 554
 stack$ -- 0
-substring$ -- 588
-swap$ -- 131
-text.length$ -- 12
+substring$ -- 700
+swap$ -- 145
+text.length$ -- 14
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 237
-warning$ -- 0
-while$ -- 118
+type$ -- 298
+warning$ -- 1
+while$ -- 145
 width$ -- 0
-write$ -- 300
+write$ -- 378
+(There was 1 warning)

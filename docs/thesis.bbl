@@ -1,4 +1,4 @@
-\begin{thebibliography}{22}
+\begin{thebibliography}{28}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -99,12 +99,29 @@ Wee~Kheng Leow and Rui Li.
 \newblock \emph{Computer Vision and Image Understanding}, 94\penalty0
   (1):\penalty0 67--91, 2004.
 
+\bibitem[Miller(1962)]{miller1962statistical}
+Robert~G Miller.
+\newblock \emph{Statistical prediction by discriminant analysis}, volume~4.
+\newblock American Meteorological Society, 1962.
+
+\bibitem[Murphy(1973)]{murphy1973new}
+Allan~H Murphy.
+\newblock A new vector partition of the probability score.
+\newblock \emph{Journal of Applied Meteorology}, 12\penalty0 (4):\penalty0
+  595--600, 1973.
+
 \bibitem[Murphy(1993)]{murphy1993good}
 Allan~H Murphy.
 \newblock What is a good forecast? an essay on the nature of goodness in
   weather forecasting.
 \newblock \emph{Weather and forecasting}, 8\penalty0 (2):\penalty0 281--293,
   1993.
+
+\bibitem[Murphy and Winkler(1984)]{murphy1984probability}
+Allan~H Murphy and Robert~L Winkler.
+\newblock Probability forecasting in meteorology.
+\newblock \emph{Journal of the American Statistical Association}, 79\penalty0
+  (387):\penalty0 489--500, 1984.
 
 \bibitem[Niculescu-Mizil and Caruana(2005)]{niculescu2005predicting}
 Alexandru Niculescu-Mizil and Rich Caruana.
@@ -118,6 +135,23 @@ Naomi Oreskes, Kristin Shrader-Frechette, Kenneth Belitz, et~al.
 \newblock Verification, validation, and confirmation of numerical models in the
   earth sciences.
 \newblock \emph{Science}, 263\penalty0 (5147):\penalty0 641--646, 1994.
+
+\bibitem[Pradhan et~al.(2011)Pradhan, Ramshaw, Marcus, Palmer, Weischedel, and
+  Xue]{pradhan2011conll}
+Sameer Pradhan, Lance Ramshaw, Mitchell Marcus, Martha Palmer, Ralph
+  Weischedel, and Nianwen Xue.
+\newblock Conll-2011 shared task: Modeling unrestricted coreference in
+  ontonotes.
+\newblock In \emph{Proceedings of the Fifteenth Conference on Computational
+  Natural Language Learning: Shared Task}, pages 1--27. Association for
+  Computational Linguistics, 2011.
+
+\bibitem[Rubin(1984)]{rubin1984bayesianly}
+Donald~B Rubin.
+\newblock Bayesianly justifiable and relevant frequency calculations for the
+  applies statistician.
+\newblock \emph{The Annals of Statistics}, 12\penalty0 (4):\penalty0
+  1151--1172, 1984.
 
 \bibitem[Singh et~al.(2013)Singh, Riedel, Martin, Zheng, and
   McCallum]{singh2013joint}
@@ -154,5 +188,11 @@ Ben Wellner, Andrew McCallum, Fuchun Peng, and Michael Hay.
   coreference with application to citation matching.
 \newblock In \emph{Proceedings of the 20th conference on Uncertainty in
   artificial intelligence}, pages 593--601. AUAI Press, 2004.
+
+\bibitem[Yang et~al.(2015)Yang, Cardie, and Frazier]{yang2015hierarchical}
+Bishan Yang, Claire Cardie, and Peter Frazier.
+\newblock A hierarchical distance-dependent bayesian model for event
+  coreference resolution.
+\newblock \emph{arXiv preprint arXiv:1504.05929}, 2015.
 
 \end{thebibliography}

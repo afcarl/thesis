@@ -6,7 +6,7 @@
 Throughout this paper, we will consider a binary prediction problem, where each to-be-predicted instance can either be labeled positive (denoted by 1), or negative (denoted by 0). A probabilistic model for this problem assigns each instance $i$ a \textit{prediction} $q_i \in [0, 1]$, which represents the confidence level that the instance is in the positive class. After the model makes their predictions, the set of true observations will be given for model assessment. The true observation for instance $i$ is denoted by $y_i \in \{0, 1\}$.  
 
 %% TODO: this definition is not OK!!
-Let $S = \{(q_1, y_1), (q_2, y_2), \cdots, (q_n y_n)\}$ be a set of prediction-observation pairs produced by a probabilistic model. Follow Murphy and Winkler (1984), we assume that the elements of S are drawn from a hypothetical joint distribuion $P(y, q)$, where $y$ and $q$ are the random variables for the prediction and the true label, respectively. $P(y, q)$ contains all the information needed for analyzing the quality of the predictions. The \textit{calibration-refinement framework} is based on the Bayesian factorization of $P(y, q)$:
+Let $S = \{(q_1, y_1), (q_2, y_2), \cdots, (q_N y_N)\}$ be a set of prediction-observation pairs produced by a probabilistic model. Follow \cite{murphy1984probability}, we assume that the elements of S are drawn from a hypothetical joint distribution $P(y, q)$, where $y$ and $q$ are the random variables for the prediction and the true label, respectively. $P(y, q)$ contains all the information needed for analyzing the quality of the predictions. The \textit{calibration-refinement framework} is based on the Bayesian factorization of $P(y, q)$:
 \begin{equation}
   P(y, q) = P(y \mid q)P(q)
   \label{eqn:calib-ref-factor}
@@ -23,14 +23,14 @@ As we can see, maintaining calibration allows posterior predictions to be more r
 Consider the set of prediction-observation pairs $S$ defined in the previous section.
 
 \textbf{Definition 3.1.} Given a value $q$ between 0 and 1, inclusively, the \textit{realistic frequency} with respect to $q$, denoted by $p_q$, is defined as:
-$$p_q = P(y = 1 \mid q) = \lim_{n\to\infty} \frac{\sum_{i=1}^nI\{q_i = q\}I\{y_i = 1\}}{\sum_{i=1}^nI\{q_i = q\}}$$ where $I\{.\}$ is the indicator function and $(q_i, y_i) \in S$.
+$$p_q = P(y = 1 \mid q) = \lim_{N\to\infty} \frac{\sum_{i=1}^nI\{q_i = q\}I\{y_i = 1\}}{\sum_{i=1}^NI\{q_i = q\}}$$ where $I\{.\}$ is the indicator function and $(q_i, y_i) \in S$.
 
 \textbf{Definition 3.2.} A set of prediction-observation pairs $S$ is said to be \textit{perfectly calibrated} if and only if:
 $$p_q = q \hspace{1cm} \forall q \in [0, 1].$$  
 
 \subsection{Measuring miscalibration}
 
-When a model does fulfill definition 3.2, we say that it is \textit{miscalibrated}. The notion of miscalibration is more interesting to study than perfect calibration since most NLP models fall into this category. It is a natural tempting to devise a metric that quantifies miscalibration. Following DeGroot and Fienberg (1982), we introduce concepts that are necessary for constructing such a metric.
+When a model does fulfill definition 3.2, we say that it is \textit{miscalibrated}. The notion of miscalibration is more interesting to study than perfect calibration since most NLP models fall into this category. It is a natural tempting to devise a metric that quantifies miscalibration. Following \cite{degroot1983comparison}, we introduce concepts that are necessary for constructing such a metric.
 
 \textbf{Definition 3.3.} Let $p$ be real number in $[0, 1]$. A \textit{strictly proper scoring rule} specified by an increasing function $g_1(x)$ and a decreasing function $g_2(x)$ is a function of $x$ that has the following form:
 \begin{equation}
@@ -57,21 +57,21 @@ It can be proved that $S_1$ and $S_2$ have the following properties:
 Choosing $g_1(x) = (x - 1)^2$ and $g_2(x) = x^2$, $S_1$ becomes the expected mean squared error between probabilistic predictions and the corresponding realistic frequencies:
 $$CalibMSE = E_{q}[p_q - q]^2$$
 
-We will refer to this quantity by the \textit{MSE calibration score} or simply calibration score, interchangeably. 
+We will refer to calibration score (CalibScore) as the \textit{square root} of CalibMSE. 
 
 \section{Practical calibration analysis}
 
-The realistic frequency $p_q$ defined in section 3.1.2 is an unknown quantity. Therefore, the true value of the MSE calibration score cannot be calculated exactly. A general approach for this problem is to replace $p_q$ in the score's formula by an approximation computed from data. We will describe adaptive binning as a simple method for doing it.
+The realistic frequency $p_q$ defined in section 3.1.2 is an unknown quantity. Therefore, the true value of the calibration score cannot be calculated exactly. A general approach for this problem is to replace $p_q$ in the score's formula by an approximation computed from data. We will describe adaptive binning as a simple method for doing it.
 
-Parametric regression is not an appropriate choice since it would not be flexible enough for exloring different models' calibration patterns. Conversely, non-parametric methods only impose weak assumptions on the model choice but still gives close approximation.
+Parametric regression is not an appropriate choice since it would not be flexible enough for exploring different models' calibration patterns. Conversely, non-parametric methods only impose weak assumptions on the model choice but still gives close approximation.
 
 \subsection{Adaptive binning procedure}
 
-Adaptive binning is a modified version of \textit{regressogram} (CITE Wasserman 2006). Instead of dividing the interval $[0, 1]$ into equally spaced like regressogram does, adaptive binning assigns an equal number of data points to each bin. This is advantangeous in the context of assessing NLP models, where the distribution of predictions is often skewed toward 0 and 1. Adaptive binning ensures that the mid-range approximations have roughly the same standard errors as those near the boundaries.
+Adaptive binning is a modified version of \textit{regressogram} \citep{wasserman2006all}. Instead of dividing the interval $[0, 1]$ into equally spaced like regressogram does, adaptive binning assigns an equal number of data points to each bin. This is advantageous in the context of assessing NLP models, where the distribution of predictions is often skewed toward 0 and 1. Adaptive binning ensures that the mid-range approximations have roughly the same standard errors as those near the boundaries.
 
 Concretely, the adaptive binning procedure is described as follows:
 
-Data: A set of $n$ data points $\{(q_1, y_1), (q_2, y_2), \cdots, (q_n, y_n)\}$.
+Data: A set of $n$ data points $\{(q_1, y_1), (q_2, y_2), \cdots, (q_N, y_N)\}$.
 
 Parameter: bin size $b$, the number of points in each bin.
 
@@ -86,9 +86,9 @@ Step 4: For all points $k$ in some bin $B_i$, define:
 $$\hat{p}_i = \frac{1}{|B_i|}\sum_{i \in B_i}y_i$$ and
 $$\hat{q}_i = \frac{1}{|B_i|}\sum_{i \in B_i}q_i$$
 
-Step 5: The MSE calibration score is calculated as:
+Step 5: The calibration score is calculated as:
 
-$$CalibMSE = \frac{1}{n}\sum_{i=1}^T|B_i|(\hat{q}_i - \hat{p}_i)^2$$
+$$CalibScore = \sqrt{\frac{1}{N}\sum_{i=1}^T|B_i|(\hat{q}_i - \hat{p}_i)^2}$$
 
 \subsection{Confidence interval estimation}
 
@@ -98,41 +98,45 @@ $$\hat{p}_i \pm 1.96 \hat{se}_i$$ where $\hat{se}_i = \sqrt{\frac{\hat{p}_i\left
 
 It should be clear that the above formula is only an estimate of the confidence interval and thus does not guarantee true coverage. However, we found that this method is simple to implement and works well in practice.
 
-In order to obtain the confidence interval for the MSE score, we use the following sampling procedure:
+In order to obtain the confidence interval for the calibration score, we use the following sampling procedure:
 
 Data: A set of approximations $\{\hat{p}_1, \hat{p}_2, \cdots, \hat{p}_T\}$.
 
 Parameter: Number of samples $N_{s}$.
 
-Step 1: Sample $N_{s}$ times. Each time, for i from 1 to T, draw $\hat{p}^*_i \sim \mathcal{N}\left(\hat{p}_i, \hat{se}^2_i\right)$.   
+Step 1: Sample $N_{s}$ times. Each time, for i from 1 to T, draw $\hat{p}^*_i \sim \mathcal{N}\left(\hat{p}_i, \hat{se}^2_i\right)$.  
 
-Step 2: Report 95\% confidence interval for the calibration score as:
+Step 2: For each sample, calculate the current calibration score as:
 
-$$CalibMSE_{avg} \pm 1.96\hat{se}_{MSE}$$ where $CalibMSE_{avg}$ and $\hat{se}_{MSE}$ are the mean and the standard error of the MSE calibration scores calculated from the samples. 
+$$\sqrt{\frac{1}{N}\sum_{i=1}^T|B_i|(\hat{q}_i - \hat{p}_i^*)^2}$$
+
+Step 3: Report 95\% confidence interval for the calibration score as:
+
+$$CalibScore_{avg} \pm 1.96\hat{se}_{score}$$ where $CalibScore_{avg}$ and $\hat{se}_{score}$ are the mean and the standard error of the scores calculated from the samples. 
 
 \section{Visualize calibration}
 
-To have a more general view of a model's degree of miscalibration, we can plot on the pairs $(\hat{p}_1, \hat{q}_1), (\hat{p}_2, \hat{q}_2), \cdots, (\hat{p}_T, \hat{q}_T)$ obtained from the adaptive binning procedure and visualize the \textit{calibration curve} of the model (Figure BLAH BLAH). Calibration curve provides a fine-grained insight into the behavior of the model. To be perfectly calibrated, the curve has to coincide with the diagional line ``y = x'', or the \textit{perfect calibration curve} (PCC). At places where the calibration curve lies above the PCC, the model predicts with less confidence then it should have done. Converesely, the model is overconfident where the calibration curve lies below the PCC.
+To have a more general view of a model's degree of miscalibration, we can plot on the pairs $(\hat{p}_1, \hat{q}_1), (\hat{p}_2, \hat{q}_2), \cdots, (\hat{p}_T, \hat{q}_T)$ obtained from the adaptive binning procedure and visualize the \textit{calibration curve} of the model. Calibration curve provides a fine-grained insight into the calibration behaviors in various prediction ranges. To be perfectly calibrated, the calibration curve has to coincide with the diagonal line ``y = x'', or the \textit{perfect calibration curve} (PCC). At places where the curve lies above the PCC, the model predicts with less confidence then it should have done. Conversely, the model is overconfident where the curve is below the PCC.
 
 An advantage of using the points obtained from the adaptive binning procedure in visualizing calibration is that the plot also captures the refinement aspect of the model. The distribution of points' x coordinates corresponds to the distribution of the model's predictions. On the other hand, if using equally spaced bins, one would need an extra plot to demonstrate that distribution. 
 
 \section{Applications of calibration in NLP}
 
-Calibration analysis is model-indepedent and can easily be applied to analyze posterior predictions of models for structure prediction problems. In this setting, binary events are well-defined as polar queries on (sub)structures of the model such as single words, entity-spans or parsing substree. It is not necessary to test whether a model is calibrated for all types of queries. Depending on different downstream taks, we want to have good calibration on different types of queries. Take syntatic parsing as an example. If the downstream tasks is a sentiment analysis tasks, it is important for the model to be reliable in predicting if a phrase is an adjective phrase. For a different application such as coreference resolution, we would care more about noun phrase's boundaries.
+Calibration analysis can easily be applied to analyze posterior predictions of models for structure prediction problems. In this setting, binary events are well-defined as polar queries on (sub)structures of the model such as single words, entity-spans or parsing subtrees. It is not necessary to test whether a model is calibrated for all types of queries. Depending on different downstream tasks, we want to have good calibration on different types of queries. Take syntactic parsing as an example. If the downstream tasks is a sentiment analysis tasks, it is important for the model to be reliable in predicting if a phrase is an adjective phrase. For a different application such as coreference resolution, we would care more about noun phrase's boundaries.
 
 \subsection{Sequence models}
 
-Logistic regression has been shown to give better calibrated probabilities than Naive Bayes (CITE Caruana), which is a signal that discriminative models would be better than generative models in posterior predictions. We take one step towards proving this claim by examining a two popular classes of sequence models for POS tagging, Hidden Markov Models (HMMs) and Conditional Random Fields (CRFs). First of all, we conduct an experiment on a regular WSJ data set extracted from CoNLL-2011 (CITE ConLL). Predicting POS tagging on the WSJ data set is almost solved problem (CITE somebody). Choosing such an easy task, we would like to analyze the behavior of well-calibrated models. Next, we test the two models on a more challenging task, predicting POS for tweets (CITE Noah). The difficulty of this task does not only come from the linguistic structure of tweets but also from the relatively small size of the data set. 
+Logistic regression has been shown to give better calibrated probabilities than Naive Bayes \citep{niculescu2005predicting}, which makes us hypothesize that discriminative models would be better than generative models in posterior predictions. We take one step towards proving this hypothesis by examining a two popular classes of sequence models for POS tagging, Hidden Markov Models (HMMs) and Conditional Random Fields (CRFs). Elegant dynamic programming algorithms are available for compute the marginal probability of different tag configurations of substrings of a sentence \citep{finkel2006solving}. The forward-backward algorithm, often used in training CRFs, provides an efficient way to compute the marginal probability for substrings of length 1 or 2. 
 
-The queries we choose to test calibration on are in the form: ``Is the current word a(n) X?''. In the first experiment, X is the ``NN'' tag. In the second experiment, we change to predicting the ``V'' tag since we find that predicting nouns in tweets is still easy for both models. Elegant dynamic programming algorithms are available for compute the marginal probability of a particular tag configuration of a substring in the sentence (CITE Finkel?). The forward-backward algorithm, used in training CRF, provides an efficient way to compute the marginal probability for substrings of length 1 or 2.  
+We conduct the first experiment on a regular WSJ data set extracted from CoNLL-2011 \citep{pradhan2011conll}. Predicting POS tagging on the WSJ data is a nearly solved problem. Choosing such an easy task, we would like to analyze the behavior of well-calibrated models. Next, we analyze the two models on a more challenging task, predicting POS for tweets \citep{gimpel2011part}. The difficulty of this task does not only come from the linguistic structure of tweets but also from the relatively small size of the data set. The queries we choose to test calibration on are in the form: ``Is the current word an X?''. In the first experiment, X is the ``NN'' tag. In the second experiment, we change to predicting the ``V'' tag since we find that predicting nouns in tweets is still easy for both models. 
 
-Also, since our focus is on model structure, we only use basic features for in our CRF implementation. Our feature set consists of only transition features (tag-tag) and emission features (tag-current word). By doing so, we disentangle the advantage of CRF's model assumptions from the advantage of it having more parameters than HMM. Later, we also conduct an ablation test on the CRF to verify the affect of features on calibration. 
+Importantly, since our focus is on model structure, we only use basic features for CRF in the comparison. Specifically, the feature set consists of only transition features (tag-tag) and emission features (tag-current word). By doing so, we disentangle the advantage of CRF's model assumptions from the advantage of it having more parameters than HMM. Later, we insert more advanced features to investigate effects of features on calibration. 
 
 \subsection{Coreference resolution}
 
-Coreference resolution is the task of BLAH BLAH. It remains a challenging task in NLP with state-of-the-art techniques are around 60-70\% accuracy on the CoNLL data set. In fact, the performances of those techniques, even on the same data set, are often not comparable due to the lack of an evaluating procedure for coreference resolution. Selecting one techinque for a end-to-end system is a really a matter of tradeoff and depends on the nature of the downstream tasks. Calibration analysis is suitable for coreference resolution for two reasons. First, when the accuracy scores are all low, a few percentages difference between imperfect models in accuracy are not significant since the models will make unsatisfiable mistakes eventually. At that time, it is more important to choose a model that is capable of truely quantifying its own mistakes so that risks can be estimated and possibly mitigated. This is when calibration analysis comes to help as a tool to separate the reliable imperfect models from the non-reliable ones. Second, calibration analysis is flexible. The calibration query can be altered for different downstream goals as long as the tested model provides a mechanism for calculating the confidence level of the query. 
+Coreference resolution is the task of determining what entities are referred to by which linguistic expressions (mentions). It remains a challenging task in NLP with state-of-the-art techniques are around 60-70\% accuracy \cite{durrett2013easy, yang2015hierarchical}. In fact, it is still a debate on which coreference system is the state-of-the-art since the methods were tested on various data sets and the results were usually reported in two or three metrics. A negative impact of this fact is that each time a user wants to start up new application domain, he or she has to re-evaluate a lot of methods. Calibration analysis is suitable for coreference resolution for two reasons. First, when the accuracy scores are all low, a few percentages difference between imperfect models in accuracy are not significant since the models will make unsatisfiable mistakes eventually. At that time, it is more important to choose a model that is capable of truly quantifying its own mistakes so that risks can be estimated and possibly mitigated. Second, calibration analysis is flexible. The calibration query can be altered for different downstream goals as long as the tested model provides a mechanism for calculating confidence scores of the query. 
 
-We conduct a calibration analysis on the Berkeley coreference system (CITE Klein) on the CoNLL-2011 data set. The core of this system is a mention-ranking log-linear model that, for each mention, computes the confidence score of that mention referring to itself (singleton) and each of the previous mentions. Entity clusters are implicit during inference and only constructed after the relationships between the mentions have been determined. Unfortunately, due to this structure, the marginal probabilities of crucial queries such as ``Does this pair of mentions belong to the same cluster?'' is complicated to derive exactly. However, we can still obtain a fairly good estimate of the confidence scores via Monte Carlo sampling. Concretely, we sample directly the distribution ouput by the model and construct the set of clusters for each sample. The approximated confidence score for a query is the empirical proportion of the number of times the answer for the query is yes over a lot of samples. 
+We conduct a calibration analysis on the Berkeley coreference system \citep{durrett2013easy} on the CoNLL-2011 data set. The core of this system is a mention-ranking log-linear model that, for each mention, computes the confidence score of that mention referring to itself (singleton) and each of the previous mentions. Entity clusters are implicit during inference and only constructed after the relationships between the mentions have been determined. Unfortunately, due to this structure, the marginal probabilities of crucial queries such as ``Does this pair of mentions belong to the same cluster?'' is complicated to derive exactly. However, we can still obtain a fairly good estimate of the confidence scores via Monte Carlo sampling. Concretely, we sample directly the distribution ouput by the model and construct the set of clusters for each sample. The approximated confidence score for a query is the empirical proportion of the number of times the answer for the query is yes over a lot of samples. 
 
 %%TODO:
 
