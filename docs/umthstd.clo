@@ -110,7 +110,7 @@
     \fontsize{12pt}{24pt}\selectfont
     Title: \textbf{\@title} \par
     Author: \textbf{\@author} \par
-    Thesis/Project Type: \textbf{Project} \par
+    Thesis/Project Type: \textbf{Thesis} \par
     Approved By: \textbf{\@firstchair, \@departmentname} \par
     Approved By: \textbf{\@secondchair, \@departmentname} \par
   \end{flushleft} \par \addvspace{2\topskip} \indent 

@@ -3,7 +3,7 @@
 
 \subsection{Calibration-refinement framework}
 
-Throughout this paper, we will consider a binary prediction problem, where each to-be-predicted instance can either be labeled positive (denoted by 1), or negative (denoted by 0). A probabilistic model for this problem assigns each instance $i$ a \textit{prediction} $q_i \in [0, 1]$, which represents the confidence level that the instance is in the positive class. After the model makes their predictions, the set of true observations will be given for model assessment. The true observation for instance $i$ is denoted by $y_i \in \{0, 1\}$.  
+Throughout this paper, we will consider a binary prediction problem, where each to-be-predicted instance can either be labeled positive (denoted by 1), or negative (denoted by 0). A probabilistic model for this problem assigns each instance $i$ a \textit{prediction} $q_i \in [0, 1]$, which represents the confidence score that the instance is in the positive class. After the model makes their predictions, the set of true observations will be given for model assessment. The true observation for instance $i$ is denoted by $y_i \in \{0, 1\}$.  
 
 %% TODO: this definition is not OK!!
 Let $S = \{(q_1, y_1), (q_2, y_2), \cdots, (q_N y_N)\}$ be a set of prediction-observation pairs produced by a probabilistic model. Follow \cite{murphy1984probability}, we assume that the elements of S are drawn from a hypothetical joint distribution $P(y, q)$, where $y$ and $q$ are the random variables for the prediction and the true label, respectively. $P(y, q)$ contains all the information needed for analyzing the quality of the predictions. The \textit{calibration-refinement framework} is based on the Bayesian factorization of $P(y, q)$:
